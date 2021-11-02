@@ -1,18 +1,39 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { test } from '../redux/actionCreators'
 
+import { useHistory } from 'react-router-dom';
 
+function EnterButton() {
 
+  let history = useHistory();
 
-const EnterButton = (props) => {
+  function handleClick() {
+    history.push('/home');
+  }
 
+  return (
+    <button type="button" onClick={handleClick}>
+      Enter
+    </button>
+  );
 
-
-    return <button onClick={ props.test}>
-            Enter
-          </button>
 }
 
 
-export default connect(null, {test})(EnterButton)
+export default EnterButton
+
+// import React from 'react'
+// import { connect } from 'react-redux'
+// import { test } from '../redux/actionCreators'
+
+// const EnterButton = (props) => {
+
+    
+
+//   return (
+//    <button onClick={ props.test}>
+//           Enter
+//         </button>
+//   )
+// }
+
+
+// export default connect(null, {test})(EnterButton)
