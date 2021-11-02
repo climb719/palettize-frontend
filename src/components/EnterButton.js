@@ -4,9 +4,13 @@ import { test } from '../redux/actionCreators'
 
 
 
+
 const EnterButton = (props) => {
-    return <button onClick={ props.test }>
-            Get Swatched
+
+
+
+    return <button onClick={ props.test}>
+            Enter
           </button>
 }
 
