@@ -7,7 +7,7 @@ import { createStore } from 'redux'
 import { swatchReducer } from './redux/swatchReducer'
 import { Provider } from 'react-redux'
 
-const store = createStore(swatchReducer)
+const store = createStore(swatchReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
   <React.StrictMode>
