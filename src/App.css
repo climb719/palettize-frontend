@@ -2,9 +2,12 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home-panels {
+  height: 65vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
 }
 
 @media (prefers-reduced-motion: no-preference) {
