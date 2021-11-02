@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux'
-import { swatchReducer } from './redux/swacthReducer'
+import { swatchReducer } from './redux/swatchReducer'
+import { Provider } from 'react-redux'
 
 const store = createStore(swatchReducer)
 
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store={store}>
     <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
