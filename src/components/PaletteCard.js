@@ -16,7 +16,7 @@ const PaletteCard = (props) => {
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical" >
   
         <div className="card" onClick={handleClick}>
-            {props.colors.map(color => <span style={{backgroundColor: color}}></span>)}
+            {props.colors.map(color => <div style={{backgroundColor: color}}></div>)}
         </div>
         <div className="card" onDoubleClick={handleClick}>
             {props.colors.map(color => <li>{color}</li>)}

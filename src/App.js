@@ -1,10 +1,7 @@
-import React from 'react';
-import './App.css';
-import { Route, Switch } from 'react-router-dom';
-import Welcome from './components/Welcome'
-import Home from './components/Home'
-import Login from './components/Signup'
-import Signup from './components/Login'
+import React from 'react'
+import './App.css'
+import { Route, Switch } from 'react-router-dom'
+import { Welcome, Home, Login, Signup } from './components'
 import { connect } from 'react-redux'
 import { getPalettes } from './redux/actionCreators'
 import PaletteContainer from './containers/PalleteContainer'
