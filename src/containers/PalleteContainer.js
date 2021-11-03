@@ -5,7 +5,7 @@ const PaletteContainer = props => {
         console.log(props)
         
         return (
-            <div></div>
+            <div>In PaletteContainer</div>
         )
     
 }
