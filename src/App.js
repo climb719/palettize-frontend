@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Welcome from './components/Welcome'
 import Home from './components/Home'
 import { connect } from 'react-redux'
@@ -17,18 +17,17 @@ class App extends Component {
 
   render(){
   return (
- 
-    <Router>
     <div className="App">
-    <PaletteContainer />
+  
       <Switch>
-      {/* <Route path='/palettes'component={PaletteContainer} /> */}
+      <Route path='/palettes'component={PaletteContainer} />
       <Route path='/home' component={Home} />
       <Route path='/' component={Welcome} />
    
       </Switch>
+  
       </div>
-    </Router>
+   
     );
   }
 }
