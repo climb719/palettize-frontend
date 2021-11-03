@@ -7,7 +7,7 @@ const PaletteContainer = ({palettes}) => {
         
         return (
             <div> 
-                <h1>All The Pretty Pallets </h1>
+                <h1>All The Pretty Palettes </h1>
                 <div className="palette-container">
     
                 {palettes.map(palette => <PaletteCard key={palette.id} colors={palette.colors} /> )}
