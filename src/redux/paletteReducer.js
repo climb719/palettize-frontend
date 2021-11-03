@@ -1,5 +1,5 @@
 const initialState = {
-    swatches: []
+    palettes: []
 }
 
 export function paletteReducer(state=initialState, action) {
