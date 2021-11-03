@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { paletteReducer } from './redux/paletteReducer'
 import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
 
-const store = createStore(paletteReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-
+const store = createStore(paletteReducer, applyMiddleware(thunk))
+//  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
