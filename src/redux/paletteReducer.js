@@ -9,7 +9,7 @@ export function paletteReducer(state=initialState, action) {
             return {...state, test: "Hello World!"}
         case 'FETCH_PALETTES':
             console.log(action)
-            return {...state, palettes: action.payload.palettes}
+            return {...state, palettes: action.payload}
         default:
             return {...state}
     }

@@ -20,10 +20,12 @@ class App extends Component {
  
     <Router>
     <div className="App">
+    <PaletteContainer />
       <Switch>
-      <Route path='/palettes'component={PaletteContainer} />
+      {/* <Route path='/palettes'component={PaletteContainer} /> */}
       <Route path='/home' component={Home} />
       <Route path='/' component={Welcome} />
+   
       </Switch>
       </div>
     </Router>

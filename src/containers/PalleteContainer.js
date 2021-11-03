@@ -1,14 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { connect } from 'react-redux'
 
-class PaletteContainer extends Component {
-
-
-    render() {
+const PaletteContainer = props => {
+        console.log(props)
         
         return (
             <div>In PaletteContainer</div>
         )
+    
+}
+
+const mapStateToProps = (state) => {
+    return {
+        palettes: state.palettes
     }
 }
 
-export default PaletteContainer
+export default connect(mapStateToProps)(PaletteContainer)
