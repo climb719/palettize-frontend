@@ -8,7 +8,11 @@ const Home = props => {
 
       <div className="App-Main">
         <h1>Let's Palettize</h1>
-        <button onClick={ props.test}> <Link to="/palettes"><div>Show Me Palettes</div></Link></button>
+        <p>Welcome Back, please  <Link to='/login'>Login</Link> </p>
+       
+        <div> New here?  <Link to='/signup'>Sign Up</Link></div>
+
+        <p><button onClick={ props.test}> <Link to="/palettes">Nah, Just Show Me Palettes</Link></button></p>
        
       </div>
    

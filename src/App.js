@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import Welcome from './components/Welcome'
 import Home from './components/Home'
+import Login from './components/Signup'
+import Signup from './components/Login'
 import { connect } from 'react-redux'
 import { getPalettes } from './redux/actionCreators'
 import PaletteContainer from './containers/PalleteContainer'
 
 
-class App extends Component {
+class App extends React.Component {
 
   componentDidMount(){
     this.props.getPalettes()
@@ -20,6 +22,8 @@ class App extends Component {
     <div className="App">
   
       <Switch>
+      <Route path='/signup'component={Login} />
+      <Route path='/login' component={Signup} />
       <Route path='/palettes'component={PaletteContainer} />
       <Route path='/home' component={Home} />
       <Route path='/' component={Welcome} />
