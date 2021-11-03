@@ -1,11 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import PaletteCard from '../components/PaletteCard'
 
-const PaletteContainer = props => {
-        console.log(props)
+const PaletteContainer = ({palettes}) => {
+
         
         return (
-            <div>In PaletteContainer</div>
+            <div>
+                In PaletteContainer
+                {palettes.map(palette => <PaletteCard key={palette.id} colors={palette.colors} /> )}
+            </div>
         )
     
 }
