@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { test } from '../redux/actionCreators'
-import PaletteContainer from '../containers/PalleteContainer'
+//import PaletteContainer from '../containers/PalleteContainer'
 import { Link } from 'react-router-dom'
 
 const Home = props => {

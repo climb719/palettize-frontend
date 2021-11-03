@@ -39,3 +39,21 @@
     transform: rotate(360deg);
   }
 }
+
+
+.card {
+  text-align: center;
+  border: black solid 2px;
+  width: 15rem;
+  height: 15rem;
+  display: grid;
+  position: relative;
+  display: inline-grid;
+  margin: 1rem 2rem;
+  box-shadow: 3px 4px black;
+}
+
+.colors {
+  border: black solid 2px;
+}
+
