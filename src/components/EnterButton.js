@@ -1,12 +1,12 @@
-
 import { useHistory } from 'react-router-dom';
 
 function EnterButton() {
 
-  let history = useHistory();
+ let history = useHistory()
 
   function handleClick() {
-    history.push('/home');
+    console.log("Enter")
+     history.push('/home')
   }
 
   return (
@@ -16,7 +16,6 @@ function EnterButton() {
   );
 
 }
-
 
 export default EnterButton
 
