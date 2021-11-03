@@ -7,6 +7,9 @@ export function paletteReducer(state=initialState, action) {
         case "TEST":
             console.log("before test case return")
             return {...state, test: "Hello World!"}
+        case 'FETCH_PALETTES':
+            console.log(action)
+            return {...state, palettes: action.payload.palettes}
         default:
             return {...state}
     }
