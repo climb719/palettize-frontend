@@ -1,5 +1,5 @@
 import React from 'react';
-import EnterButton from './EnterButton'
+
 
 const Welcome = props => {
     console.log(props)
@@ -9,7 +9,7 @@ const Welcome = props => {
         <h1>
           Welcome to Palettize
         </h1>
-        <EnterButton />
+
     </div>
   )
 }

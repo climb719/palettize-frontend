@@ -1,4 +1,4 @@
-const Login = props => {
+const Dashboard = props => {
     console.log(props)
   return (
     <div className="App-Main">
@@ -8,4 +8,4 @@ const Login = props => {
 
 }
 
-export default Login
+export default Dashboard

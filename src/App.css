@@ -30,7 +30,7 @@ nav .hover {
 
 
 nav .active {
-  background-color: cyan; 
+  background-color: lightgray;
   border: 2px solid whitesmoke;
   color: black;
 }
