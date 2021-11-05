@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import { Route, Switch } from 'react-router-dom'
-import { Welcome, Home, Login, Signup } from './components'
+import { Welcome, Home, Login, Signup, Nav } from './components'
 import { connect } from 'react-redux'
 import { getPalettes } from './redux/actionCreators'
 import PaletteContainer from './containers/PalleteContainer'
@@ -16,8 +16,9 @@ class App extends React.Component {
 
   render(){
   return (
-    <div className="App">
   
+    <div className="App">
+      <Nav />
       <Switch>
       <Route path='/signup'component={Login} />
       <Route path='/login' component={Signup} />
