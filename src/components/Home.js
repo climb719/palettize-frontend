@@ -2,11 +2,13 @@ import { connect } from 'react-redux'
 import { test } from '../redux/actionCreators'
 //import PaletteContainer from '../containers/PalleteContainer'
 import { Link } from 'react-router-dom'
+import  Nav  from './Nav'
 
 const Home = props => {
   return (
 
       <div className="App-Main">
+        <Nav />
         <h1>Let's Palettize</h1>
         <p>Welcome Back, please  <Link to='/login'>Login</Link> </p>
        
