@@ -10,6 +10,8 @@ export function reducer(state=initialState, action) {
         case 'FETCH_PALETTES':
             console.log(action)
             return {...state, palettes: action.payload}
+        case 'SET_IMAGE':
+            return 
         default:
             return {...state}
     }
