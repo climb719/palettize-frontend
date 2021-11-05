@@ -14,7 +14,6 @@ const Home = props => {
        
         <div> New here?  <Link to='/signup'>Sign Up</Link></div>
 
-        <p><button onClick={ props.test}> <Link to="/palettes">Nah, Just Show Me Palettes</Link></button></p>
        
       </div>
    

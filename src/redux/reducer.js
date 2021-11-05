@@ -2,7 +2,7 @@ const initialState = {
     palettes: []
 }
 
-export function paletteReducer(state=initialState, action) {
+export function reducer(state=initialState, action) {
     switch (action.type) {
         case "TEST":
             console.log("before test case return")

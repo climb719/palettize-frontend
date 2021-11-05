@@ -1,12 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { ColorExtractor } from 'react-color-extractor'
+import { test } from '../redux/actionCreators'
 
-const Create = () => {
+
+const Create = (props) => {
 
     return (
         <div>
-
+            <button onClick={props.test}>Create</button>
         </div>
     )
 }
@@ -17,4 +19,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(Create)
+export default connect(mapStateToProps, {test})(Create)
