@@ -24,12 +24,12 @@ nav .nav-link {
   font-weight: 500;
 }
 
-nav .hover {
+nav:hover {
   background-color: blue;
 }
 
 
-nav .active {
+nav:active {
   background-color: lightgray;
   border: 2px solid whitesmoke;
   color: black;
@@ -43,6 +43,40 @@ nav .active {
   background-repeat: no-repeat;
   display: flex;
 }
+
+.dashboard {
+  background-color: lightgray;
+
+}
+
+.dashboard-main {
+  margin-left: 17%;
+  padding-left: 2%;
+  border: 4px black;
+  background-color: white;
+  padding-bottom: 70%;
+}
+
+.login {
+  position: absolute;
+  left:2%;
+  top: 4%;
+}
+
+.my_info {
+  position: absolute;
+  left: 3%;
+  top: 25%;
+}
+
+.my_palettes {
+  position: absolute;
+  left: 50%;
+  top: 8%;
+}
+
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
