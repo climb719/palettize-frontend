@@ -25,19 +25,14 @@ class Create extends React.Component {
     this.setState(state => ({ colors: [...state.colors, ...colors] }))
        
     renderSwatches = () => {
-        const { colors } = this.state
-
-        return colors.map((color, id) => {
-    
+        return this.state.colors.map((color, id) => {
             return ( 
                 <div className="swatch-container">
-                <div className="swatches"
-                key={id}
-                style={{backgroundColor: color}}>
-                <div className="create-hexes">{color}</div>
-                </div>
-                </div> 
-                )
+                  <div className="swatches" key={id} style={{backgroundColor: color}}>
+                    <p className="create-hexes">{color}</p>
+                  </div>
+                </div>  
+                )                 
             })
         }
  
@@ -55,11 +50,11 @@ class Create extends React.Component {
             </ColorExtractor>
             <form>
               <input type="text" name="image" placeholder="drop a url here..." size="50" onChange={this.onChange} value={this.state.image} />&nbsp;
-              
-              <input type="submit" value="Reset"  onClick={this.handleClick}/>
+              <input type="submit" value="Reset" onClick={this.handleClick}/>
             </form>
             <div>
                 {this.renderSwatches()}
+                <button id="save-create" hidden={this.state.colors.length<1}>Save this Palette</button>
             </div>
         </div>
         )
@@ -81,3 +76,5 @@ export default Create
 
 //<input type="submit" value="Submit"  onClick={this.handleClick}/>
 
+// { (!this.state.colors === []) ?
+//     <button>Save this Palette</button> : '' }
