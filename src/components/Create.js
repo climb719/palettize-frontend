@@ -10,32 +10,46 @@ class Create extends React.Component {
         colors: []
     }
 
-    handleClick = (e) => {
-        e.preventDefault()
-        // this.props.test()
-        console.log(this.state.image)
-    }
-
     onChange = (e) => {
         this.setState({[e.target.name]: e.target.value})
       }
+
+      handleClick = (e) => {
+        e.preventDefault()
+        // this.props.test()
+        console.log(this.state.image)
+        this.setState({image: "", colors: []}) 
+    }
 
     getColors = colors =>
     this.setState(state => ({ colors: [...state.colors, ...colors] }))
        
     renderSwatches = () => {
         const { colors } = this.state
-        console.log(colors)
-    }
 
+        return colors.map((color, id) => {
+    
+            return ( 
+                <div
+                key={id}
+                style={{
+                backgroundColor: color,
+                width: 100,
+                height: 100,
+                margin: 5
+                }}>
+                <div className="create-hexes">{color}</div>
+                </div>
+                
+                )
+            })
+        }
  
 
     render() {
     return (
         <div>
-         
-            
-            <ColorExtractor getColors={this.getColors}  >
+            <ColorExtractor getColors={this.getColors} maxColors={4}  >
            { (this.state.image === "") ?
            <img className="image_field" src="https://www.kenyons.com/wp-content/uploads/2017/04/default-image-620x600.jpg" alt="default"/>
             : <img className="image_field"
@@ -45,13 +59,12 @@ class Create extends React.Component {
             </ColorExtractor>
             <form>
               <input type="text" name="image" placeholder="drop a url here..." size="50" onChange={this.onChange} value={this.state.image} />&nbsp;
-              <input type="submit" value="Submit"  onClick={this.handleClick}/>
+              
+              <input type="submit" value="Reset"  onClick={this.handleClick}/>
             </form>
-           
-            <div>
+            <div className="swatch-container">
                 {this.renderSwatches()}
             </div>
-        
         </div>
         )
     }
@@ -69,3 +82,6 @@ export default Create
 
 
 // export default connect(mapStateToProps, {test})(Create)
+
+//<input type="submit" value="Submit"  onClick={this.handleClick}/>
+

@@ -143,3 +143,18 @@ nav:active {
   border: black solid 2px;
 }
 
+
+.swatch-container {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 5px;
+
+  
+}
+
+.swatches {
+  
+  width: 100px;
+  height: 100px,
+}
