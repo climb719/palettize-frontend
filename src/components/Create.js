@@ -12,23 +12,30 @@ class Create extends React.Component {
 
     handleClick = (e) => {
         e.preventDefault()
-        this.props.test()
+        // this.props.test()
         console.log(this.state.image)
-    }
-
-    extractColors = colors => {
-        this.setState({ colors: colors })
-        console.log(colors)
     }
 
     onChange = (e) => {
         this.setState({[e.target.name]: e.target.value})
       }
 
+    getColors = colors =>
+    this.setState(state => ({ colors: [...state.colors, ...colors] }))
+       
+    renderSwatches = () => {
+        const { colors } = this.state
+        console.log(colors)
+    }
+
+ 
+
     render() {
     return (
         <div>
-            <ColorExtractor extractColors={this.extractColors} >
+         
+            
+            <ColorExtractor getColors={this.getColors}  >
            { (this.state.image === "") ?
            <img className="image_field" src="https://www.kenyons.com/wp-content/uploads/2017/04/default-image-620x600.jpg" alt="default"/>
             : <img className="image_field"
@@ -40,6 +47,10 @@ class Create extends React.Component {
               <input type="text" name="image" placeholder="drop a url here..." size="50" onChange={this.onChange} value={this.state.image} />&nbsp;
               <input type="submit" value="Submit"  onClick={this.handleClick}/>
             </form>
+           
+            <div>
+                {this.renderSwatches()}
+            </div>
         
         </div>
         )
