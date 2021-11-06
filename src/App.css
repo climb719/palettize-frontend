@@ -148,13 +148,16 @@ nav:active {
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
-  padding: 5px;
-
-  
+  gap: 5px;
+  margin-top: 10px; 
 }
 
 .swatches {
-  
+  margin: 5px;
   width: 100px;
-  height: 100px,
+  height: 100px;
+}
+
+.create-hexes {
+  margin-top: 100%; 
 }

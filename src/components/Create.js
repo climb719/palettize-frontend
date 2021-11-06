@@ -30,17 +30,13 @@ class Create extends React.Component {
         return colors.map((color, id) => {
     
             return ( 
-                <div
+                <div className="swatch-container">
+                <div className="swatches"
                 key={id}
-                style={{
-                backgroundColor: color,
-                width: 100,
-                height: 100,
-                margin: 5
-                }}>
+                style={{backgroundColor: color}}>
                 <div className="create-hexes">{color}</div>
                 </div>
-                
+                </div> 
                 )
             })
         }
@@ -62,7 +58,7 @@ class Create extends React.Component {
               
               <input type="submit" value="Reset"  onClick={this.handleClick}/>
             </form>
-            <div className="swatch-container">
+            <div>
                 {this.renderSwatches()}
             </div>
         </div>
