@@ -39,7 +39,7 @@ class Create extends React.Component {
 
     render() {
     return (
-        <div>
+        <div className="create-container">
             <ColorExtractor getColors={this.getColors} maxColors={4}  >
            { (this.state.image === "") ?
            <img className="image_field" src="https://www.kenyons.com/wp-content/uploads/2017/04/default-image-620x600.jpg" alt="default"/>
@@ -50,11 +50,12 @@ class Create extends React.Component {
             </ColorExtractor>
             <form>
               <input type="text" name="image" placeholder="drop a url here..." size="50" onChange={this.onChange} value={this.state.image} />&nbsp;
+              <input type="submit" value="Upload"/>&nbsp;
               <input type="submit" value="Reset" onClick={this.handleClick}/>
             </form>
-            <div>
-                {this.renderSwatches()}
-                <button id="save-create" hidden={this.state.colors.length<1}>Save this Palette</button>
+            <div >
+                {this.renderSwatches()}  
+               <p> <button id="save-create" hidden={this.state.colors.length<1}>Save this Palette</button></p>
             </div>
         </div>
         )

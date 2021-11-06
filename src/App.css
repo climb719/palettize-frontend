@@ -119,6 +119,7 @@ nav:active {
   }
 }
 
+
 .palette-container {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -126,6 +127,7 @@ nav:active {
   grid-row-gap: 2em;
   grid-column-gap: 2rem;
   padding: 4em;
+
 }
 
 
@@ -144,12 +146,17 @@ nav:active {
 }
 
 
+.create-container {
+
+
+}
+
 .swatch-container {
   display: inline-flex;
   flex-direction: row;
-  justify-content: center;
+
   gap: 5px;
-  margin-top: 10px; 
+  margin-top: 10px;
 }
 
 .swatches {
