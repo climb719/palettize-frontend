@@ -75,10 +75,14 @@ nav:active {
   top: 8%;
 }
 
+
+
+
 .image_field {
-  width: 700;
-  height: 500;
-  margin-top: 10%; 
+  max-width: 700px;
+  max-height: 500px;
+  overflow: hidden;
+  margin-top: 5%; 
 
 }
 

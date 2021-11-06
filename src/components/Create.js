@@ -1,20 +1,24 @@
 import React from 'react'
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 import { ColorExtractor } from 'react-color-extractor'
-import { test } from '../redux/actionCreators'
-
+// import { test } from '../redux/actionCreators'
 
 class Create extends React.Component {
 
     state = {
-        image: ""
+        image: "",
+        colors: []
     }
-
 
     handleClick = (e) => {
         e.preventDefault()
         this.props.test()
         console.log(this.state.image)
+    }
+
+    extractColors = colors => {
+        this.setState({ colors: colors })
+        console.log(colors)
     }
 
     onChange = (e) => {
@@ -24,7 +28,7 @@ class Create extends React.Component {
     render() {
     return (
         <div>
-            <ColorExtractor >
+            <ColorExtractor extractColors={this.extractColors} >
            { (this.state.image === "") ?
            <img className="image_field" src="https://www.kenyons.com/wp-content/uploads/2017/04/default-image-620x600.jpg" alt="default"/>
             : <img className="image_field"
@@ -43,12 +47,14 @@ class Create extends React.Component {
 
 }
 
-const mapStateToProps = (state) => {
-    return {
-        
-        colors: state.colors
-    }
-}
+export default Create 
+
+// const mapStateToProps = (state) => {
+//     return {
+       
+//         colors: state.colors
+//     }
+// }
 
 
-export default connect(mapStateToProps, {test})(Create)
+// export default connect(mapStateToProps, {test})(Create)
