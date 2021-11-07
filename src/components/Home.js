@@ -1,23 +1,17 @@
-import { connect } from 'react-redux'
-import { test } from '../redux/actionCreators'
-//import PaletteContainer from '../containers/PalleteContainer'
-import { Link } from 'react-router-dom'
+import React from 'react';
 
 
 const Home = props => {
+    console.log(props)
   return (
+    <div className="App-Main">
+        <img src="https://i.pinimg.com/564x/1e/db/25/1edb253a19ebb84b7528e9c33e375159.jpg" className="home-panels" alt="swatches" />
+        <h1>
+         Welcome to Palettize
+        </h1>
 
-      <div className="App-Main">
-        
-        <h1>Let's Palettize</h1>
-        <p>Welcome Back, please  <Link to='/login'>Login</Link> </p>
-       
-        <div> New here?  <Link to='/signup'>Sign Up</Link></div>
-
-       
-      </div>
-   
+    </div>
   )
 }
 
-export default connect(null, {test})(Home)
+export default Home

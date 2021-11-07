@@ -8,7 +8,7 @@ function Nav(){
       <NavLink className="nav-link" to="/dashboard">MyDashboard</NavLink>&nbsp;
       <NavLink className="nav-link" to="/signup">Sign up</NavLink>&nbsp;
       <NavLink className="nav-link" to="/create">Create</NavLink>&nbsp;
-      <NavLink className="nav-link" to="/create">Logout</NavLink>&nbsp;
+      <NavLink className="nav-link" to="/">Logout</NavLink>&nbsp;
       </div>
   </nav>
 }
