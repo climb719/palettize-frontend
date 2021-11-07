@@ -39,11 +39,11 @@ class Create extends React.Component {
 
     render() {
     return (
-        <div className="create-container">
+        <div className="App-Main" >
             <ColorExtractor getColors={this.getColors} maxColors={4}  >
            { (this.state.image === "") ?
-           <img className="image_field" src="https://www.kenyons.com/wp-content/uploads/2017/04/default-image-620x600.jpg" alt="default"/>
-            : <img className="image_field"
+           <img className="image-container"/>
+            : <img className="image-field"
               src={this.state.image}  alt="your input"
             />
             }

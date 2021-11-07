@@ -6,10 +6,9 @@ const PaletteContainer = ({palettes}) => {
 
         
         return (
-            <div> 
-                <h1>All The Pretty Palettes </h1>
+            <div className="App-Main"> 
+                <h2 className="palettes"> Palette Library </h2>
                 <div className="palette-container">
-    
                 {palettes.map(palette => <PaletteCard key={palette.id} colors={palette.colors} /> )}
             </div>
             </div>
