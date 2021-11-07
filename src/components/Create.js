@@ -42,7 +42,7 @@ class Create extends React.Component {
         <div className="App-Main" >
             <ColorExtractor getColors={this.getColors} maxColors={4}  >
            { (this.state.image === "") ?
-           <img className="image-container"/>
+           <img className="image-container" />
             : <img className="image-field"
               src={this.state.image}  alt="your input"
             />
