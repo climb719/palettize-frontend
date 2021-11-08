@@ -22,6 +22,7 @@ class Signup extends Component {
       e.preventDefault()
       console.log(this.state)
      this.props.addUser(this.state)
+     this.props.history.push("/dashboard")
   }
 
 
