@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import ReactCardFlip from "react-card-flip";
+import ReactCardFlip from "react-card-flip"
+import SaveButton from './SaveButton'
 
 const PaletteCard = (props) => {
    // console.log(props)
@@ -20,7 +21,7 @@ const PaletteCard = (props) => {
         </div>
         <div className="card" onDoubleClick={handleClick}>
             {props.colors.map(color => <li>{color}</li>)}
-            <button>Save</button>
+            <SaveButton />
         </div>
        
         </ReactCardFlip>
