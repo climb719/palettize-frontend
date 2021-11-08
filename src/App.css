@@ -171,6 +171,43 @@ nav:active {
   margin-top: 100%; 
 }
 
+.signup-form {
+  border: 2px blue solid;
+
+  position: absolute;
+  margin-top: 0%;
+  margin-left: 0%;
+  padding: 20px;
+  background-color: lightgrey;
+  width: 20%;
+  height: 40%;
+  color: darkgray;
+  font-size: 14px;
+  text-align: left;
+ 
+ 
+}
+
+.signup-title {
+  position: absolute;
+  left: 44.5%;
+  top: 8%;
+}
+
+.signup-text {
+  position: absolute;
+  left: 43%;
+  top: 17%;
+  font-size: 16px;
+
+}
+
+.signup-form input { 
+  top: 25%;
+  text-align: right;
+}
+
+
 /* #save-create {
 
 
