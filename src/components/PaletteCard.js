@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 
 const PaletteCard = (props) => {
-    console.log(props)
+   // console.log(props)
     //declare a new state variable and set it's initial state of false 
     //this is similar to th.state.isFlipped and this.setState
     //setIsFlipped is what can call to supdate state

@@ -20,7 +20,7 @@ class App extends React.Component {
     <div className="App">
       <Nav />
       <Switch>
-      <Route path='/signup'component={Signup} />
+      <Route path="/signup"  render={(routeProps) => <Signup {...routeProps}/>}/> 
       <Route path='/dashboard' component={Dashboard} />
       <Route path='/palettes'component={PaletteContainer} />
       <Route path='/create' component={Create} />

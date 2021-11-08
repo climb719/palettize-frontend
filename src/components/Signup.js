@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { addUser } from '../redux/actionCreators'
 
 class Signup extends Component {
-  
+
   state = {
     username: "", 
     password: "", 
@@ -18,17 +18,17 @@ class Signup extends Component {
     console.log(this.state)
 }
 
-   
   handleSubmit = (e) => {
       e.preventDefault()
       console.log(this.state)
-   this.props.addUser(this.state)
-      
+     this.props.addUser(this.state)
   }
 
 
   render() {
+    console.log(this.props)
     return (
+    
       <div className="App-Main">
      
       <h2 className="signup-title">Palettize</h2>

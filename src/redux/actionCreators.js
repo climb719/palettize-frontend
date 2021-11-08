@@ -10,14 +10,14 @@ export const getPalettes = () => {
 
 // export const addUser = (user) => ({type: "ADD_USER", payload: user})
 
-    export const addUser = (user) => {
-        return  dispatch => fetch(API + 'users', {
-            method: 'POST', 
-            headers: {
-              'Content-Type': 'application/json',
+export const addUser = (user) => {
+    return  dispatch => fetch(API + 'users', {
+        method: 'POST', 
+        headers: {
+            'Content-Type': 'application/json',
             },
             body: JSON.stringify({user}),
-          })
+        })
         .then(resp => resp.json())
         .then(user => dispatch({type: "ADD_USER", payload: user}))
     }
