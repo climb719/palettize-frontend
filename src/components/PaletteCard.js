@@ -20,6 +20,7 @@ const PaletteCard = (props) => {
         </div>
         <div className="card" onDoubleClick={handleClick}>
             {props.colors.map(color => <li>{color}</li>)}
+            <button>Save</button>
         </div>
        
         </ReactCardFlip>
