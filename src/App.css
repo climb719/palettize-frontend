@@ -58,18 +58,25 @@ nav:active {
   position: absolute;
   left:2%;
   top: 4%;
+  color: darkgray;
+  font-size: 14px;
+  text-align: left;
 }
 
 .my_info {
   position: absolute;
-  left: 3%;
+  left: 6%;
   top: 25%;
+  color: darkgray;
+  font-size: 16px;
 }
 
 .my_palettes {
   position: absolute;
-  left: 50%;
-  top: 8%;
+  left: 6.5%;
+  top: 30%;
+  color: darkgray;
+  font-size: 16px;
 }
 
 
@@ -113,7 +120,7 @@ nav:active {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-row-gap: 2em;
   grid-column-gap: 2rem;
-  padding: 4em;
+  padding: 2em;
 
 }
 
@@ -204,7 +211,7 @@ nav:active {
 
 .signup-form input { 
   top: 25%;
-  text-align: right;
+ 
 }
 
 

@@ -1,38 +1,52 @@
+import React, { Component } from "react";
 import { NavLink } from 'react-router-dom'
-import { useState } from 'react'
 import { connect } from 'react-redux'
+import { addUser } from '../redux/actionCreators'
 
-function Signup(props){
-  const [user, setUser] = useState({username: "", password: "", passwordConfirmation: ""})
+class Signup extends Component {
   
-  const handleChange = (e) => setUser({...user, [e.target.name]: e.target.value})
-    console.log(props)
-    console.log(user)
-  const handleSubmit = (e) => {
+  state = {
+    username: "", 
+    password: "", 
+    passwordConfirmation: ""
+  }
+  
+  handleChange = (e) => {
+    this.setState({
+        [e.target.name]: e.target.value
+    })
+    console.log(this.state)
+}
+
+   
+  handleSubmit = (e) => {
       e.preventDefault()
-      console.log(user)
+      console.log(this.state)
+   this.props.addUser(this.state)
       
   }
 
-  return (
-    <div className="App-Main">
+
+  render() {
+    return (
+      <div className="App-Main">
      
-    <h2 className="signup-title">Palettize</h2>
-    <p className="signup-text">Bring some color to your life</p>
-    <div className="signup-form">
-    <form  onSubmit={handleSubmit}>
-    <p> <label>
+      <h2 className="signup-title">Palettize</h2>
+      <p className="signup-text">Bring some color to your life</p>
+      <div className="signup-form">
+      <form  onSubmit={this.handleSubmit}>
+      <p> <label>
       Username 
       </label>   
-      <input type="text" name="username" value={user.username} onChange={handleChange} size="40"/> </p>
+      <input type="text" name="username" value={this.state.username} onChange={this.handleChange} size="40"/> </p>
       <p> <label>
         Password<br/>
       </label>
-      <input type="password" name="password" value={user.password} onChange={handleChange} size="40" /></p>
+      <input type="password" name="password" value={this.state.password} onChange={this.handleChange} size="40" /></p>
       <p> <label>
         Password Confirmation<br/>
       </label>
-      <input type="password" name="passwordConfirmation" value={user.passwordConfirmation} onChange={handleChange} size="40"/></p>
+      <input type="password" name="passwordConfirmation" value={this.state.passwordConfirmation} onChange={this.handleChange} size="40"/></p>
       <p><input type="submit" value="Submit" /></p>
     </form>
     <br/>
@@ -40,7 +54,12 @@ function Signup(props){
     </div>
     </div>
   )
+  }
 
 }
 
-export default Signup
+const mapDispatchToProps = dispatch => ({
+  addUser: user => dispatch(addUser(user))
+})
+
+export default connect(null, mapDispatchToProps)(Signup)
