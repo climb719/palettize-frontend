@@ -1,4 +1,6 @@
+
 const API = 'http://localhost:3000/'
+
 
 export const test = () => ({type: "TEST"})
 export const setImage = () => ({type: "SET_IMAGE"})
@@ -10,7 +12,8 @@ export const getPalettes = () => {
 
 // export const addUser = (user) => ({type: "ADD_USER", payload: user})
 
-export const addUser = (user) => {
+export const addUser = (user, history) => {
+
     return  dispatch => fetch(API + 'users', {
         method: 'POST', 
         headers: {
@@ -19,9 +22,22 @@ export const addUser = (user) => {
             body: JSON.stringify({user}),
         })
         .then(resp => resp.json())
-        .then(user => dispatch({type: "ADD_USER", payload: user}))
+        .then(user =>     {
+            if (user.errors) {
+                alert(user.errors)
+            } else {
+                dispatch({type: "ADD_USER", payload: user})
+                console.log(history)
+                //history.push('./dashboard')
+                
+            }
+
+        })
+             
+            
     }
 
 
     
+
 
