@@ -27,6 +27,7 @@ export const addUser = (user, history) => {
             } else {
                 dispatch({type: "ADD_USER", payload: user})
                 console.log(history)
+                console.log(user)
                 history.history.push('/dashboard')    
               //  debugger 
             }
@@ -54,7 +55,6 @@ export const addUser = (user, history) => {
             })        
         }
     
-
 
     
 

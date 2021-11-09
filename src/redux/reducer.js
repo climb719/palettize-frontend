@@ -1,5 +1,9 @@
 const initialState = {
-    palettes: []
+    palettes: [],
+user: {
+    username: "",
+    id: null
+    }
 }
 
 export function reducer(state=initialState, action) {
@@ -16,8 +20,10 @@ export function reducer(state=initialState, action) {
             console.log(action)
             return {...state, user: action.payload}
         case 'FIND_USER':
-            console.log(action)
+            console.log(action.paylod)
+            
             return {...state, user: action.payload}
+          
         default:
             return {...state}
     }
