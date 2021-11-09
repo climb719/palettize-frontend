@@ -15,6 +15,9 @@ export function reducer(state=initialState, action) {
         case 'ADD_USER':
             console.log(action)
             return {...state, user: action.payload}
+        case 'FIND_USER':
+            console.log(action)
+            return {...state, user: action.payload}
         default:
             return {...state}
     }

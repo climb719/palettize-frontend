@@ -33,6 +33,28 @@ export const addUser = (user, history) => {
         })        
     }
 
+    export const findUser = (user, history) => {
+        return  dispatch => fetch(API + 'sessions', {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({user}),
+            })
+            .then(resp => resp.json())
+            .then(user =>     {
+                if (user.errors) {
+                    alert(user.errors)
+                } else {
+                    dispatch({type: "FIND_USER", payload: user})
+                    console.log(history)
+                    history.history.push('/dashboard')    
+                  //  debugger 
+                }
+            })        
+        }
+    
+
 
     
 
