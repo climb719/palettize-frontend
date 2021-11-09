@@ -18,7 +18,7 @@ function Signup (props) {
   return (
     <div className="App-Main">
       <h2 className="signup-title">Palettize</h2>
-        <p className="signup-text">Bring some color to your life</p>
+        <p className="signup-text">Bring some color to your apps!</p>
           <div className="signup-form">
           <form  onSubmit={handleSubmit}>
             <p><label>

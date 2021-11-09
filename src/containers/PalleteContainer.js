@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import PaletteCard from '../components/PaletteCard'
 
 const PaletteContainer = ({palettes}) => {
+    //destructuring - instead of props and then using props.palettes 
 console.log(palettes)
         
         return (
