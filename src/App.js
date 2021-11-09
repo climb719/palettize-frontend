@@ -16,11 +16,10 @@ class App extends React.Component {
 
   render(){ 
   return (
-  
     <div className="App">
       <Nav />
       <Switch>
-      <Route path="/signup"  render={(routeProps) => <Signup {...routeProps} setAppUser={this.setAppUser}/>}/> 
+      <Route path="/signup"  render={(routeProps) => <Signup {...routeProps} />}/> 
       <Route path="/login"  render={(routeProps) => <Login {...routeProps}/>}/> 
       <Route path='/dashboard' component={Dashboard} />
       <Route path='/palettes'component={PaletteContainer} />
@@ -33,15 +32,16 @@ class App extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  const setAppUser = {setAppUser: state.user}
-  console.log(setAppUser)
-  }
-
-// const mapStateToProps = (state) => {
-//   return {
-//       user: state.user
+// function setAppUser(state) {
+//   const setAppUser = {setAppUser: state.user}
+//   console.log(setAppUser)
 //   }
-// }
 
-export default connect(mapStateToProps, {getPalettes})(App)
+  // function setAppUser(state) {
+  //   return {
+  //     setAppUser: state.user
+  //   }
+  // }
+  
+
+export default connect(null, {getPalettes})(App)

@@ -10,7 +10,6 @@ export const getPalettes = () => {
     .then(palettes => dispatch({type: 'FETCH_PALETTES', payload: palettes}))
 }
 
-// export const addUser = (user) => ({type: "ADD_USER", payload: user})
 
 export const addUser = (user, history) => {
     return  dispatch => fetch(API + 'users', {
@@ -40,7 +39,7 @@ export const addUser = (user, history) => {
             headers: {
                 'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({user}),
+                body: JSON.stringify(user),
             })
             .then(resp => resp.json())
             .then(user =>     {
@@ -49,6 +48,7 @@ export const addUser = (user, history) => {
                 } else {
                     dispatch({type: "FIND_USER", payload: user})
                     console.log(history)
+                    console.log(user)
                     history.history.push('/dashboard')    
                   //  debugger 
                 }
