@@ -8,7 +8,7 @@ function Signup (props) {
   const history = useHistory()
   
   const handleChange = (e) => setUser({...user, [e.target.name]: e.target.value})
-  
+  //need to keep all key/value pairs and then update whatever key we are pasing in with this value - if using an object
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(user)
