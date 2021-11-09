@@ -180,7 +180,6 @@ nav:active {
 
 .signup-form {
   border: 2px blue solid;
-
   position: absolute;
   margin-top: 0%;
   margin-left: 0%;
@@ -188,11 +187,9 @@ nav:active {
   background-color: lightgrey;
   width: 20%;
   height: 40%;
-  color: darkgray;
+  color: rgb(104, 103, 103);
   font-size: 14px;
   text-align: left;
- 
- 
 }
 
 .signup-title {
@@ -206,12 +203,42 @@ nav:active {
   left: 42.2%;
   top: 17%;
   font-size: 16px;
-
 }
 
 .signup-form input { 
   top: 25%;
- 
+}
+
+.login-form {
+  border: 2px blue solid;
+  position: absolute;
+  top: 28%;
+  margin-left: 0%;
+  padding: 20px;
+  background-color: lightgrey;
+  width: 20%;
+  height: 30%;
+  color: rgb(104, 103, 103);
+  font-size: 14px;
+  text-align: left;
+}
+
+.login-title {
+  position: absolute;
+  left: 44.5%;
+  top: 8%;
+}
+
+.login-text {
+  position: absolute;
+  left: 46%;
+  top: 17%;
+  font-size: 16px;
+
+}
+
+.login-form input { 
+  top: 25%;
 }
 
 

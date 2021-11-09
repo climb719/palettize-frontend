@@ -35,7 +35,7 @@ function Signup (props) {
             <input type="password" name="passwordConfirmation" value={user.passwordConfirmation} onChange={handleChange} size="40"/></p>
             <p><input type="submit" value="Submit" /></p>
           </form><br/>
-          Already on Palettize?<NavLink to="/Login"> Login</NavLink>
+          Already on Palettize?<NavLink to="/login"> Login</NavLink>
         </div>
     </div>
   
