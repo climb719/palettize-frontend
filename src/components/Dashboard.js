@@ -16,14 +16,3 @@ const Dashboard = props => {
 
 export default Dashboard
 
-
-{/* <div className="login">
-<p> <label>
-  Username<br/>
-  </label>   
-  <input type="text" name="username" v size="30"/> </p>
-  <p> <label>
-    Password<br/>
-  </label>
-  <input type="password" name="password"  size="30" /></p>
-  </div> */}

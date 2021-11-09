@@ -3,9 +3,9 @@ import ReactCardFlip from "react-card-flip"
 import SaveButton from './SaveButton'
 
 const PaletteCard = (props) => {
-   // console.log(props)
+    console.log(props)
     //declare a new state variable and set it's initial state of false 
-    //this is similar to th.state.isFlipped and this.setState
+    //this is similar to this.state.isFlipped and this.setState
     //setIsFlipped is what can call to supdate state
     const [isFlipped, setIsFlipped] = useState(false)
   
@@ -14,16 +14,16 @@ const PaletteCard = (props) => {
     }
 
     return (
+    
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical" >
   
         <div className="card" onClick={handleClick}>
-            {props.colors.map(color => <div style={{backgroundColor: color}}></div>)}
+            {props.colors.map((color, id) => <div key={id} style={{backgroundColor: color}}></div>)}
         </div>
         <div className="card" onDoubleClick={handleClick}>
-            {props.colors.map(color => <li>{color}</li>)}
+            {props.colors.map((color, id) => <li key={id}>{color}</li>)}
             <SaveButton />
         </div>
-       
         </ReactCardFlip>
     )
 
