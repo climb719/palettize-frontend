@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
 
 function Signup (props) {
+  console.log(props)
   const [user, setUser] = useState({username: "", password: "", passwordConfirmation: ""})
   const history = useHistory()
   
