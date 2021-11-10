@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
 
 function Login (props) {
+  console.log(props)
   const [user, setUser] = useState({username: "", password: ""})
   const history = useHistory()
   

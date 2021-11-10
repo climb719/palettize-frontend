@@ -20,9 +20,8 @@ export function reducer(state=initialState, action) {
             console.log(action)
             return {...state, user: action.payload}
         case 'FIND_USER':
-            console.log(action) 
+            console.log(action.payload) 
             return {...state, user: action.payload}
-          
         default:
             return {...state}
     }

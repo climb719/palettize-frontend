@@ -1,10 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import PaletteCard from '../components/PaletteCard'
+import { getPalettes } from '../redux/actionCreators'
+import { useEffect } from "react"
 
-const PaletteContainer = ({palettes}) => {
+function PaletteContainer({palettes}) {
     //destructuring - instead of props and then using props.palettes 
 console.log(palettes)
+
+//   componentDidMount(){
+//     this.props.getPalettes()
+//   }
+
+    useEffect(() => console.log("hello world from container"))
+
         
         return (
             <div className="App-Main"> 
@@ -23,4 +32,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(PaletteContainer)
+export default connect(mapStateToProps, {getPalettes})(PaletteContainer)
