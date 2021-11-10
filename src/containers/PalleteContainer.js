@@ -21,7 +21,7 @@ function PaletteContainer({getPalettes, palettes}) {
             <div className="App-Main"> 
                 <h2 className="palettes"> Palette Library </h2>
                 <div className="palette-container">
-                {palettes.map(palette => <PaletteCard key={palette.id} id={palette.id}colors={palette.colors} /> )}
+                {palettes.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )}
             </div>
             </div>
         )
