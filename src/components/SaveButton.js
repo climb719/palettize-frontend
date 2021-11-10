@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom'
 
-function SaveButton (props) {
-   
-    return <button> Save </button>
+function DetailsButton (props) {
+   console.log(props)
+    return <Link to={`/palettes/${props.id}`}><button> More Details </button></Link>
   }
   
-  export default SaveButton;
+  export default DetailsButton;

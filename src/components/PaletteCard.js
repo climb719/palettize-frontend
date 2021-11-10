@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip"
-import SaveButton from './SaveButton'
-import { Link } from 'react-router-dom'
+import DetailsButton from './SaveButton'
+
 
 export default function PaletteCard({id, colors}) {
     console.log(id)
@@ -23,11 +23,9 @@ export default function PaletteCard({id, colors}) {
         </div>
         <div className="card" onDoubleClick={handleClick}>
             {colors.map((color, id) => <li key={id}>{color}</li>)}
-            <SaveButton />
+            <DetailsButton id={id} />
         </div>
         </ReactCardFlip>
     )
 
 }
-
-export default PaletteCard
