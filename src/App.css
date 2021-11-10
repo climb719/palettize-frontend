@@ -143,6 +143,15 @@ nav:active {
   border: black solid 2px;
 }
 
+.show {
+  height: 400px;
+  width: 70%;
+  object-fit: cover;
+  display: grid;
+  text-align: left;
+  font-size: 15px;
+}
+
 
 .image-container {
   width: 500px;
