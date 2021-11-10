@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip"
-import DetailsButton from './SaveButton'
+import DetailsButton from './DetailsButton'
 
 
 export default function PaletteCard({id, colors}) {
-    console.log(id)
+    //console.log(id)
     //declare a new state variable and set it's initial state of false 
     //this is similar to this.state.isFlipped and this.setState
     //setIsFlipped is what can call to supdate state
@@ -17,7 +17,6 @@ export default function PaletteCard({id, colors}) {
     return (
     
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical" >
-  
         <div className="card" onClick={handleClick}>
             {colors.map((color, id) => <div key={id} style={{backgroundColor: color}}></div>)}
         </div>
