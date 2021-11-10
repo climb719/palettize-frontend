@@ -12,7 +12,9 @@ function PaletteContainer({getPalettes, palettes}) {
 //     this.props.getPalettes()
 //   }
 
-    useEffect(() => getPalettes())
+    useEffect(getPalettes, [getPalettes])
+    //useEffect instead of component did mount
+    //function and array of dependenies, so if chnages it can run again but since doesn't change, happences once 
 
         
         return (
