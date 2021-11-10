@@ -5,7 +5,6 @@ import { Home, Create, Dashboard, Signup, Login, Nav } from './components'
 import { connect } from 'react-redux'
 import PaletteContainer from './containers/PalleteContainer'
 
-
 function App(props) {
 
   console.log(props)
@@ -22,9 +21,7 @@ function App(props) {
       <Route path='/' component={Home} />
       </Switch>
       </div>
-   
     )
-  
 }
 
 const mapStateToProps = state => {
@@ -32,6 +29,5 @@ const mapStateToProps = state => {
     user: state.user
   }
 }
-  
 
 export default connect(mapStateToProps)(App)

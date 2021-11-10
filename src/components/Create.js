@@ -40,11 +40,11 @@ class Create extends React.Component {
     render() {
     return (
         <div className="App-Main" >
-            <ColorExtractor getColors={this.getColors} maxColors={4}  >
+            <ColorExtractor getColors={this.getColors}   >
            { (this.state.image === "") ?
-           <img className="image-container" alt="" />
+           <img className="image-container" alt=""/>
             : <img className="image-field"
-              src={this.state.image}  alt="your input"
+              src={this.state.image}  alt="invalid url"
             />
             }
             </ColorExtractor>
@@ -65,17 +65,3 @@ class Create extends React.Component {
 
 export default Create 
 
-// const mapStateToProps = (state) => {
-//     return {
-       
-//         colors: state.colors
-//     }
-// }
-
-
-// export default connect(mapStateToProps, {test})(Create)
-
-//<input type="submit" value="Submit"  onClick={this.handleClick}/>
-
-// { (!this.state.colors === []) ?
-//     <button>Save this Palette</button> : '' }
