@@ -11,6 +11,12 @@ export const getPalettes = () => {
 }
 
 
+export const getPalette = (id) => {
+    return dispatch => fetch(API + `palettes${id}`)
+    .then(resp => resp.json())
+    .then(palette => dispatch({type: 'FETCH_PALETTE', payload: palette}))
+}
+
 export const addUser = (user, history) => {
     return  dispatch => fetch(API + 'users', {
         method: 'POST', 
@@ -25,10 +31,7 @@ export const addUser = (user, history) => {
                 alert(user.errors)
             } else {
                 dispatch({type: "ADD_USER", payload: user})
-                console.log(history)
-                console.log(user)
                 history.history.push('/dashboard')    
-              //  debugger 
             }
         })        
     }
@@ -47,10 +50,7 @@ export const addUser = (user, history) => {
                     alert(user.errors)
                 } else {
                     dispatch({type: "FIND_USER", payload: user})
-                    console.log(history)
-                    console.log(user)
                     history.history.push('/dashboard')    
-                  //  debugger 
                 }
             })        
         }

@@ -3,7 +3,10 @@ const initialState = {
 user: {
     username: "",
     id: null
-    }
+    },
+selectedPalette: {
+    colors: []
+}
 }
 
 export function reducer(state=initialState, action) {
@@ -14,6 +17,9 @@ export function reducer(state=initialState, action) {
         case 'FETCH_PALETTES':
             console.log(action)
             return {...state, palettes: action.payload}
+        case 'FETCH_PALETTE':
+            console.log("getting one palette", action.payload)
+            return {...state, selectedPalettes: action.payload}
         case 'SET_IMAGE':
             return 
         case 'ADD_USER':
