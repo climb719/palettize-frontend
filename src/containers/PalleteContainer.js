@@ -4,22 +4,22 @@ import PaletteCard from '../components/PaletteCard'
 import { getPalettes } from '../redux/actionCreators'
 import { useEffect } from "react"
 
-function PaletteContainer({palettes}) {
+function PaletteContainer(props) {
     //destructuring - instead of props and then using props.palettes 
-console.log(palettes)
+//console.log(palettes)
 
 //   componentDidMount(){
 //     this.props.getPalettes()
 //   }
 
-    useEffect(() => console.log("hello world from container"))
+    useEffect(() => props.getPalettes())
 
         
         return (
             <div className="App-Main"> 
                 <h2 className="palettes"> Palette Library </h2>
                 <div className="palette-container">
-                {palettes.map(palette => <PaletteCard key={palette.id} id={palette.id}colors={palette.colors} /> )}
+                {props.palettes.map(palette => <PaletteCard key={palette.id} id={palette.id}colors={palette.colors} /> )}
             </div>
             </div>
         )
