@@ -12,7 +12,7 @@ export const getPalettes = () => {
 
 
 export const getPalette = (id) => {
-    return dispatch => fetch(API + `palettes${id}`)
+    return dispatch => fetch(API + `palettes/${id}`)
     .then(resp => resp.json())
     .then(palette => dispatch({type: 'FETCH_PALETTE', payload: palette}))
 }
