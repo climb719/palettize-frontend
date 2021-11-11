@@ -102,22 +102,19 @@ nav:active {
   margin-top: 5%;
 }
 
-aside {
-  margin-right: 90%;
-  width: 15%;
-  padding-left: 4%;
+
+.lib-dashboard {
+ position: absolute;
+  left: 2%;
+  top: 3%;
   border: 4px black;
   background-color: whitesmoke;
-  align-items: center;
-
-  
+  padding: 2%;
 }
 
 .lib-tags {
-
   color: darkgray;
   font-size: 16px;
- 
 }
 
 

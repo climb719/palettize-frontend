@@ -22,10 +22,11 @@ function PaletteContainer({getPalettes, palettes, paletteTags}) {
 
         
         return (
-            <div className="App-Main"> 
-            <aside>
-            {uniqueTags.map((tag, i) => <div className="lib-tags" key={i}> {tag} </div> )} 
-            </aside>
+            <div className="App-Main">
+    
+            <div className="lib-dashboard">
+                {uniqueTags.map((tag, i) => <div className="lib-tags" key={i}> {tag} </div> )} 
+            </div>
                 <h2 className="palettes"> Palette Library </h2>
                 <div className="palette-container">
                 {palettes.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )}
