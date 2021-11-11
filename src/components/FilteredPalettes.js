@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { PaletteCard, TagButtons } from './index'
 
 
 function FilteredPalettes({filteredPalettes}) {
@@ -7,6 +8,12 @@ function FilteredPalettes({filteredPalettes}) {
     console.log(filteredPalettes)
  return (
     <div className="App-Main"> 
+      <TagButtons />
+     <h2 className="palettes"> Filtered </h2>
+        <div className="palette-container">
+                {filteredPalettes.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )}
+               
+        </div>
     </div>
  )
 
