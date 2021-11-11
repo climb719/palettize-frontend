@@ -5,7 +5,8 @@ user: {
     id: null
     },
 selectedPalette: {
-    colors: []
+    colors: [],
+    tags: []
 }
 }
 
