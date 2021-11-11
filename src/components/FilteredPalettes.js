@@ -1,12 +1,23 @@
+import React from 'react'
+import { connect } from 'react-redux'
 
 
-function FilteredPalettes (props) {
+function FilteredPalettes({filteredPalettes}) {
 
-    console.log(props)
+    console.log(filteredPalettes)
  return (
-    <div className="App-Main">Filtered</div>
+    <div className="App-Main"> 
+    </div>
  )
 
 }
 
-export default FilteredPalettes 
+const mapStateToProps = (state) => {
+    return {
+        filteredPalettes: state.filtered
+    }
+  }
+
+
+
+export default connect(mapStateToProps)(FilteredPalettes) 
