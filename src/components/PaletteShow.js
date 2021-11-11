@@ -21,8 +21,8 @@ function PaletteShow({getPalette, colors, id, length, tags }) {
             {colors.map((color, id) => <span key={id} style={{backgroundColor: color} }>{color}</span>)}
             </div>
             { (parseInt(routeId)  === parseInt(length)) ?
-            <p>All good things come to an end... <Link to={'/palettes'}>Back to All Palettes</Link></p> :
-           <p> <Link to={`/palettes/${parseInt(routeId) + 1}`}>Go to Next Palette</Link> </p>
+            <p>All good things come to an end... <Link className="show-link" to={'/palettes'}>Back to All Palettes</Link></p> :
+           <p> <Link className="show-link" to={`/palettes/${parseInt(routeId) + 1}`}>Go to Next Palette</Link> </p>
             }  
             <TagButtons />
            <p><SaveButton /></p>

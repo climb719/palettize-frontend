@@ -1,7 +1,7 @@
 
 function SaveButton (props) {
  
-    return <button>Save this Palette </button>
+    return <button className="save-button">Save this Palette </button>
   }
   
   export default SaveButton;
