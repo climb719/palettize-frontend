@@ -1,6 +1,17 @@
 import { connect } from 'react-redux'
+import { useLocation } from 'react-router-dom'
 
-function TagButtons ({tags, palettes}) {
+function TagButtons ({tags, palettes, id, paletteTags}) {
+
+    const location = useLocation()
+    console.log(location.pathname)
+    console.log(id)
+
+    const allTags = paletteTags.flat()
+    const uniqueTags = [...new Set(allTags)].sort()
+    console.log(uniqueTags)
+
+
 
 
  const handleClick= (e) => {
@@ -10,15 +21,23 @@ function TagButtons ({tags, palettes}) {
   }
 
     return (
+        <div>
+        { (location.pathname === `/palettes/${id}`) ? 
         <div className="tags-container">
         {tags.map((tag, index) => <button onClick={handleClick} className="tag-buttons" key={index}> {tag} </button>)}
+        </div> :
+        <div className="lib-dashboard">
+        {uniqueTags.map((tag, i) => <div className="lib-tags" key={i}> {tag} </div> )} 
+        </div>
+        }
         </div>
     )
   }
   
   const mapStateToProps = (state) => {
     return {...state.selectedPalette,
-       palettes: state.palettes
+       palettes: state.palettes,
+       paletteTags: state.palettes.map(palette => palette.tags)  
     }
   }
 

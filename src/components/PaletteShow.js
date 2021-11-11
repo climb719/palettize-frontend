@@ -5,7 +5,7 @@ import { useEffect } from "react"
 import { Link } from 'react-router-dom'
 import  { TagButtons, SaveButton } from './index'
 
-function PaletteShow({getPalette, colors, id, length, tags }) {
+function PaletteShow({getPalette, colors, length, tags }) {
    console.log(tags)
    const routeId = useParams().id 
     console.log(length)
@@ -24,7 +24,7 @@ function PaletteShow({getPalette, colors, id, length, tags }) {
             <p>All good things come to an end... <Link className="show-link" to={'/palettes'}>Back to All Palettes</Link></p> :
            <p> <Link className="show-link" to={`/palettes/${parseInt(routeId) + 1}`}>Go to Next Palette</Link> </p>
             }  
-            <TagButtons />
+            <TagButtons id={routeId} />
            <p><SaveButton /></p>
         </div>
             )
