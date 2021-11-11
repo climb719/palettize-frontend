@@ -83,21 +83,41 @@ nav:active {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  
 }
 
 
 .palette-container {
-  display: grid;
+  display: inline-grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-row-gap: 2em;
   grid-column-gap: 2rem;
   padding: 2em;
+  padding-left: 20%;
 
 }
 
 .palettes {
   margin-top: 5%;
+}
+
+aside {
+  margin-right: 90%;
+  width: 15%;
+  padding-left: 4%;
+  border: 4px black;
+  background-color: whitesmoke;
+  align-items: center;
+
+  
+}
+
+.lib-tags {
+
+  color: darkgray;
+  font-size: 16px;
+ 
 }
 
 

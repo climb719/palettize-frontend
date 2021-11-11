@@ -5,13 +5,16 @@ import { getPalettes } from '../redux/actionCreators'
 import { useEffect } from "react"
 // import  { TagButtons } from '../components'
 
-function PaletteContainer({getPalettes, palettes}) {
+function PaletteContainer({getPalettes, palettes, paletteTags}) {
     //destructuring - instead of props and then using props.palettes 
-//  const paletteTags = palettes.map(palette => palette.tags)
 
 //   componentDidMount(){
 //     this.props.getPalettes()
 //   }
+    const allTags = paletteTags.flat()
+    const uniqueTags = [...new Set(allTags)].sort()
+    console.log(uniqueTags)
+
 
     useEffect(getPalettes, [getPalettes])
     //useEffect instead of component did mount
@@ -20,12 +23,13 @@ function PaletteContainer({getPalettes, palettes}) {
         
         return (
             <div className="App-Main"> 
-            <div className="library-aside">
-                {palettes.map((palette) => ( <div key={palette.id}> {palette.tags.map((tag, i) => <div key={i}> {tag} </div> )}   </div> ))}
-            </div>
+            <aside>
+            {uniqueTags.map((tag, i) => <div className="lib-tags" key={i}> {tag} </div> )} 
+            </aside>
                 <h2 className="palettes"> Palette Library </h2>
                 <div className="palette-container">
                 {palettes.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )}
+               
             </div>
             </div>
         )
@@ -34,8 +38,11 @@ function PaletteContainer({getPalettes, palettes}) {
 
 const mapStateToProps = (state) => {
     return {
-        palettes: state.palettes
+        palettes: state.palettes,
+        paletteTags: state.palettes.map(palette => palette.tags)  
     }
 }
 
 export default connect(mapStateToProps, {getPalettes})(PaletteContainer)
+
+// {palettes.map((palette) => ( <div key={palette.id}> {palette.tags.map((tag, i) => <div className="lib-tags" key={i}> {tag} </div> )}  </div> ))}
