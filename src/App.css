@@ -76,7 +76,7 @@ nav:active {
 
 .App-Main {
   background-color: #282c34;
-  min-height: 100vh;
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,7 +94,8 @@ nav:active {
   grid-row-gap: 2em;
   grid-column-gap: 2rem;
   padding: 2em;
-  padding-left: 20%;
+  padding-left: 12%;
+  padding-bottom: 20%;
 
 }
 
@@ -105,17 +106,27 @@ nav:active {
 
 .lib-dashboard {
  position: absolute;
-  left: 2%;
-  top: 3%;
-  border: 4px black;
-  background-color: whitesmoke;
-  padding: 2%;
+  left: 1%;
+  top: 27%;
+
+  align-items: center;
+  align-content: center;
 }
 
-.lib-tags {
-  color: darkgray;
-  font-size: 16px;
+.lib-buttons {
+  text-align: center;
+  font-size: 14px;
+  border-radius: 10px;
+  padding: 5px 12px;
+
+ 
+
 }
+
+.lib-buttons:hover {
+  background-color: gray;
+}
+
 
 
 .card {

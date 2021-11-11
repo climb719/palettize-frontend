@@ -27,7 +27,7 @@ function TagButtons ({tags, palettes, id, paletteTags}) {
         {tags.map((tag, index) => <button onClick={handleClick} className="tag-buttons" key={index}> {tag} </button>)}
         </div> :
         <div className="lib-dashboard">
-        {uniqueTags.map((tag, i) => <div className="lib-tags" key={i}> {tag} </div> )} 
+        {uniqueTags.map((tag) => <ul> <button onClick={handleClick} className="lib-buttons" key={tag}> {tag} </button> </ul>)} 
         </div>
         }
         </div>
