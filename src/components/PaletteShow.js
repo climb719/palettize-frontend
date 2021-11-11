@@ -21,12 +21,12 @@ function PaletteShow({getPalette, colors, id, length, tags }) {
             </div>
             { (parseInt(routeId)  === parseInt(length)) ?
             <p>All good things come to an end... <Link to={'/palettes'}>Back to All Palettes</Link></p> :
-            <Link to={`/palettes/${parseInt(routeId) + 1}`}>Go to Next Palette</Link> 
+           <p> <Link to={`/palettes/${parseInt(routeId) + 1}`}>Go to Next Palette</Link> </p>
             }  
             <div className="tags-container">
-            {tags.map((tag, index) => <span className key={index}>{tag}</span>)}
+           {tags.map((tag, index) => <button className="tag-buttons" key={index}> {tag} </button>)}
             </div>
-            <p><button>Save this Pallette</button></p>
+           <p><button>Save this Pallette</button></p>
         </div>
             )
 }
