@@ -1,9 +1,10 @@
 import { connect } from 'react-redux'
 import { useLocation,  useHistory  } from 'react-router-dom'
+import { filterPalettes } from '../redux/actionCreators'
 
 
 
-function TagButtons ({tags, palettes, id, paletteTags}) {
+function TagButtons ({tags, palettes, id, paletteTags, filterPalettes}) {
 
     const location = useLocation()
     const history = useHistory();
@@ -17,7 +18,8 @@ function TagButtons ({tags, palettes, id, paletteTags}) {
     const handleClick= (e) => {
     console.log(e.target.innerText)
     const filteredPalettes = palettes.filter(palette => palette.tags.includes(e.target.innerText))
-     history.push('/filtered-palettes')
+    filterPalettes(filteredPalettes)
+    history.push('/filtered-palettes')
     console.log(filteredPalettes)
  
   }
@@ -43,4 +45,10 @@ function TagButtons ({tags, palettes, id, paletteTags}) {
     }
   }
 
-export default connect(mapStateToProps)(TagButtons)
+
+   
+const mapDispatchToProps = (dispatch) => ({
+    filterPalettes: filteredPalettes => dispatch(filterPalettes(filteredPalettes))
+  })
+
+export default connect(mapStateToProps, mapDispatchToProps)(TagButtons)

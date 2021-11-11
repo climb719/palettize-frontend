@@ -1,8 +1,10 @@
+import { bindActionCreators } from "redux"
+
 const API = 'http://localhost:3000/'
 
 
-export const test = () => ({type: "TEST"})
-export const setImage = () => ({type: "SET_IMAGE"})
+export const filterPalettes = (filteredPalettes) => ({type: "SET_FILTERED", payload: filteredPalettes})
+//export const setImage = () => ({type: "SET_IMAGE"})
 
 export const getPalettes = () => {
     return dispatch => fetch(API + 'palettes')
@@ -36,21 +38,21 @@ export const addUser = (user, history) => {
         })        
     }
 
-    export const findUser = (user, history) => {
-        return  dispatch => fetch(API + 'sessions', {
-            method: 'POST', 
-            headers: {
-                'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(user),
+export const findUser = (user, history) => {
+    return  dispatch => fetch(API + 'sessions', {
+        method: 'POST', 
+        headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user),
             })
-            .then(resp => resp.json())
-            .then(user =>     {
-                if (user.errors) {
-                    alert(user.errors)
-                } else {
-                    dispatch({type: "FIND_USER", payload: user})
-                    history.history.push('/dashboard')    
+        .then(resp => resp.json())
+        .then(user =>     {
+            if (user.errors) {
+                alert(user.errors)
+            } else {
+                dispatch({type: "FIND_USER", payload: user})
+                history.history.push('/dashboard')    
                 }
             })        
         }
