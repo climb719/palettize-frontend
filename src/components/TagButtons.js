@@ -1,23 +1,25 @@
 import { connect } from 'react-redux'
-import { useLocation } from 'react-router-dom'
+import { useLocation,  useHistory  } from 'react-router-dom'
+
+
 
 function TagButtons ({tags, palettes, id, paletteTags}) {
 
     const location = useLocation()
-    console.log(location.pathname)
+    const history = useHistory();
+    console.log(location)
     console.log(id)
 
     const allTags = paletteTags.flat()
     const uniqueTags = [...new Set(allTags)].sort()
     console.log(uniqueTags)
 
-
-
-
- const handleClick= (e) => {
+    const handleClick= (e) => {
     console.log(e.target.innerText)
-   const filteredPalettes = palettes.filter(palette => palette.tags.includes(e.target.innerText))
-   console.log(filteredPalettes)
+    const filteredPalettes = palettes.filter(palette => palette.tags.includes(e.target.innerText))
+     history.push('/filtered-palettes')
+    console.log(filteredPalettes)
+ 
   }
 
     return (

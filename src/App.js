@@ -1,9 +1,10 @@
 import React from 'react'
 import './App.css'
 import { Route, Switch } from 'react-router-dom'
-import { Home, Create, Dashboard, Signup, Login, Nav, PaletteShow } from './components'
+import { Home, Create, Dashboard, Signup, Login, Nav, PaletteShow, FilteredPalettes } from './components'
 import { connect } from 'react-redux'
 import PaletteContainer from './containers/PalleteContainer'
+
 
 function App(props) {
 
@@ -18,6 +19,7 @@ function App(props) {
       <Route path='/dashboard' component={Dashboard} />
       <Route path='/palettes/:id'component={PaletteShow} />
       <Route path='/palettes'component={PaletteContainer} />
+      <Route path='/filtered-palettes' component={FilteredPalettes} />
       <Route path='/create' component={Create} />
       <Route path='/' component={Home} />
       </Switch>
