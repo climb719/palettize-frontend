@@ -1,8 +1,7 @@
 import { connect } from 'react-redux'
 
 function TagButtons ({tags, palettes}) {
-  console.log({tags})
-    console.log({palettes})
+
 
  const handleClick= (e) => {
     console.log(e.target.innerText)
@@ -13,7 +12,7 @@ function TagButtons ({tags, palettes}) {
     return (
         <div className="tags-container">
         {tags.map((tag, index) => <button onClick={handleClick} className="tag-buttons" key={index}> {tag} </button>)}
-         </div>
+        </div>
     )
   }
   
