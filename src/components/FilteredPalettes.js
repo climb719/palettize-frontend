@@ -5,12 +5,15 @@ import { PaletteCard, TagButtons } from './index'
 
 function FilteredPalettes({filteredPalettes}) {
 
+
+   
+
     console.log(filteredPalettes)
  return (
     <div className="App-Main"> 
       <TagButtons />
      <h2 className="palettes"> Filtered </h2>
-        <div className="palette-container">
+        <div className="filtered-container">
                 {filteredPalettes.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )}
                
         </div>

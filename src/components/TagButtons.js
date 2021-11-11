@@ -3,7 +3,6 @@ import { useLocation,  useHistory  } from 'react-router-dom'
 import { filterPalettes } from '../redux/actionCreators'
 
 
-
 function TagButtons ({tags, palettes, id, paletteTags, filterPalettes}) {
 
     const location = useLocation()
@@ -15,12 +14,20 @@ function TagButtons ({tags, palettes, id, paletteTags, filterPalettes}) {
     const uniqueTags = [...new Set(allTags)].sort()
     console.log(uniqueTags)
 
+    const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth' 
+        })
+      }
+
     const handleClick= (e) => {
     console.log(e.target.innerText)
     const filteredPalettes = palettes.filter(palette => palette.tags.includes(e.target.innerText))
     filterPalettes(filteredPalettes)
     history.push('/filtered-palettes')
     console.log(filteredPalettes)
+    scrollToTop()
  
   }
 
