@@ -22,14 +22,13 @@ function TagButtons ({tags, palettes, id, paletteTags, filterPalettes}) {
       }
 
     const handleClick= (e) => {
-    console.log(e.target.innerText)
-    const filteredPalettes = palettes.filter(palette => palette.tags.includes(e.target.innerText))
-    filterPalettes(filteredPalettes)
-    history.push('/filtered-palettes')
-    console.log(filteredPalettes)
-    scrollToTop()
- 
-  }
+        console.log(e.target.innerText)
+        const filteredPalettes = palettes.filter(palette => palette.tags.includes(e.target.innerText))
+        filterPalettes(filteredPalettes)
+        history.push('/filtered-palettes')
+        console.log(filteredPalettes)
+        scrollToTop()
+    }
 
     return (
         <div>
@@ -43,14 +42,14 @@ function TagButtons ({tags, palettes, id, paletteTags, filterPalettes}) {
         }
         </div>
     )
-  }
+}
   
   const mapStateToProps = (state) => {
     return {...state.selectedPalette,
        palettes: state.palettes,
        paletteTags: state.palettes.map(palette => palette.tags)  
     }
-  }
+}
 
 
    

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { PaletteCard, TagButtons } from './index'
+import { PaletteCard, TagButtons } from '../components/index'
 
 
 function FilteredPalettes({filteredPalettes}) {
