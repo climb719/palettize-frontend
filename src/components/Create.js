@@ -25,7 +25,7 @@ class Create extends React.Component {
     this.setState(state => ({ colors: [...state.colors, ...colors] }))
        
     renderSwatches = () => {
-        return this.state.colors.map((color, id) => {
+        return this.state.colors.slice(0, 4).map((color, id) => {
             return ( 
                 <div className="swatch-container">
                   <div className="swatches" key={id} style={{backgroundColor: color}}>
@@ -46,7 +46,7 @@ class Create extends React.Component {
             : <img className="image-field"
               src={this.state.image}  alt="invalid url"
             />
-            }
+            } 
             </ColorExtractor>
             <form>
               <input type="text" name="image" placeholder="drop a url here..." size="50" onChange={this.onChange} value={this.state.image} />&nbsp;
