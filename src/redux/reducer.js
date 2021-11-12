@@ -8,8 +8,7 @@ selectedPalette: {
     colors: [],
     tags: []
 },
-filtered: [],
-allUniqueTags: []
+filtered: []
 }
 
 export function reducer(state=initialState, action) {
@@ -32,9 +31,7 @@ export function reducer(state=initialState, action) {
         case 'SET_FILTERED':
             console.log(action.payload)
             return {...state, filtered: action.payload}
-        case 'SET_TAGS':
-            console.log(action.payload)
-            return {...state, allUniqueTags: action.payload}
+    
         default:
             return {...state}
     }

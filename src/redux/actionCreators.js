@@ -4,7 +4,7 @@ const API = 'http://localhost:3000/'
 
 
 export const filterPalettes = (filteredPalettes) => ({type: "SET_FILTERED", payload: filteredPalettes})
-export const setTags = (uniqueTags) => ({type: "SET_TAGS", payload: uniqueTags})
+// export const setTags = (uniqueTags) => ({type: "SET_TAGS", payload: uniqueTags})
     
 
 

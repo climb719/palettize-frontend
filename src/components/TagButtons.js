@@ -1,9 +1,9 @@
 import { connect } from 'react-redux'
 import { useLocation,  useHistory  } from 'react-router-dom'
-import { filterPalettes, setTags } from '../redux/actionCreators'
+import { filterPalettes } from '../redux/actionCreators'
 
 
-function TagButtons ({tags, palettes, id, paletteTags, filterPalettes, setTags}) {
+function TagButtons ({tags, palettes, id, paletteTags, filterPalettes}) {
 
     const location = useLocation()
     const history = useHistory();
@@ -13,7 +13,7 @@ function TagButtons ({tags, palettes, id, paletteTags, filterPalettes, setTags})
     const allTags = paletteTags.flat()
     const uniqueTags = [...new Set(allTags)].sort()
     console.log(uniqueTags)
-    setTags(uniqueTags)
+
 
     const scrollToTop = () => {
         window.scrollTo({
@@ -55,8 +55,7 @@ function TagButtons ({tags, palettes, id, paletteTags, filterPalettes, setTags})
 
    
 const mapDispatchToProps = (dispatch) => ({
-    filterPalettes: filteredPalettes => dispatch(filterPalettes(filteredPalettes)),
-    setTags: uniqueTags => dispatch(setTags(uniqueTags))
+    filterPalettes: filteredPalettes => dispatch(filterPalettes(filteredPalettes))
   })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TagButtons)
