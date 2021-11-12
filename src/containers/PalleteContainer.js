@@ -21,16 +21,14 @@ function PaletteContainer({getPalettes, palettes}) {
     //function and array of dependenies, so if chnages it can run again but since doesn't change, happences once 
 
         
-        return (
-            <div className="App-Main">
-            <TagButtons />
-            
-                <h2 className="palettes"> Palette Library </h2>
-                <div className="palette-container">
-                {palettes.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )}
-               
-            </div>
-            </div>
+    return (
+        <div className="App-Main">
+        <TagButtons />
+        <h2 className="palettes"> Palette Library </h2>
+        <div className="palette-container">
+            {palettes.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )}
+        </div>
+        </div>
         )
     
 }

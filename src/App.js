@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import { Route, Switch } from 'react-router-dom'
-import { Home, Create, Dashboard, Signup, Login, Nav, PaletteShow, FilteredPalettes } from './components'
+import { Home, Create, Dashboard, Signup, Login, Nav, PaletteShow, FilteredPalettes, AddPalette } from './components'
 import { connect } from 'react-redux'
 import PaletteContainer from './containers/PalleteContainer'
 
@@ -21,6 +21,7 @@ function App(props) {
       <Route path='/palettes'component={PaletteContainer} />
       <Route path='/filtered-palettes' component={FilteredPalettes} />
       <Route path='/create' component={Create} />
+      <Route path='/add' component={AddPalette} />
       <Route path='/' component={Home} />
       </Switch>
       </div>
