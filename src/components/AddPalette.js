@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import { connect } from 'react-redux'
 import Select from 'react-select'
+import makeAnimated from 'react-select/animated';
+import { tagOptions } from './data';
 
 
 
@@ -14,6 +16,8 @@ function AddPalette ({paletteTags}) {
     const allTags = paletteTags.flat()
     const uniqueTags = [...new Set(allTags)].sort()
     console.log(uniqueTags)
+
+    const animatedSelect = makeAnimated()
 
 
     const handleChange = (e) => setColors({...colors, [e.target.name]: e.target.value}, console.log(colors))
@@ -32,14 +36,15 @@ function AddPalette ({paletteTags}) {
             <p>Color 3: <input type="color" id="color_3" name="color_3" value={colors[2]} onChange={handleChange}/></p>
             <p>Color 4: <input type="color" id="color_4" name="color_4" value={colors[3]} onChange={handleChange}/></p> 
             </div> 
-            
-            <p> <select  multiple>
-            <option value="" disabled selected>Select your tags</option>
-            {uniqueTags.map((tag, id) => <option key={id} value={tag} >{tag}</option>)}
-            </select> </p>
-            </form>
-                        
-                        
+            <Select
+            closeMenuOnSelect={false}
+            components={animatedSelect}
+            defaultValue="Select your tags"
+            isMulti
+            options={tagOptions}
+            />
+            <p><input type="submit" value="Submit" /></p>
+            </form>            
             </div>
         </div>
         )
@@ -54,3 +59,5 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(AddPalette)
+
+
