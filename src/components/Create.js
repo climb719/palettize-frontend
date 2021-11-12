@@ -55,7 +55,7 @@ class Create extends React.Component {
             </form>
             <div >
                 {this.renderSwatches()}  
-               <p> <button id="save-create" hidden={this.state.colors.length<1}>Save this Palette</button></p>
+               <p> <button id="save-create" >Save this Palette</button></p>
             </div>
         </div>
         )
@@ -63,5 +63,7 @@ class Create extends React.Component {
 
 }
 
+
+// hidden={this.state.colors.length<1}
 export default Create 
 
