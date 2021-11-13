@@ -6,8 +6,6 @@ const API = 'http://localhost:3000/'
 export const filterPalettes = (filteredPalettes) => ({type: "SET_FILTERED", payload: filteredPalettes})
 // export const setTags = (uniqueTags) => ({type: "SET_TAGS", payload: uniqueTags})
     
-
-
 //export const setImage = () => ({type: "SET_IMAGE"})
 
 export const getPalettes = () => {
@@ -22,7 +20,7 @@ export const getPalette = (id) => {
     .then(resp => resp.json())
     .then(palette => dispatch({type: 'FETCH_PALETTE', payload: palette}))
 }
-
+//can I do this if/else in my fetch in this file? 
 export const addUser = (user, history) => {
     return  dispatch => fetch(API + 'users', {
         method: 'POST', 
@@ -32,11 +30,12 @@ export const addUser = (user, history) => {
             body: JSON.stringify({user}),
         })
         .then(resp => resp.json())
-        .then(user =>     {
-            if (user.errors) {
-                alert(user.errors)
+        .then(data =>     {
+            if (data.errors) {
+                alert(data.errors)
             } else {
-                dispatch({type: "ADD_USER", payload: user})
+                localStorage.token = data.token
+                dispatch({type: "SET_USER", payload: data.user})
                 history.history.push('/dashboard')    
             }
         })        
@@ -51,11 +50,12 @@ export const findUser = (user, history) => {
             body: JSON.stringify(user),
             })
         .then(resp => resp.json())
-        .then(user =>     {
-            if (user.errors) {
-                alert(user.errors)
+        .then(data =>     {
+            if (data.errors) {
+                alert(data.errors)
             } else {
-                dispatch({type: "FIND_USER", payload: user})
+                localStorage.token = data.token
+                dispatch({type: "SET_USER", payload: data.user})
                 history.history.push('/dashboard')    
                 }
             })        

@@ -2,7 +2,7 @@ const initialState = {
     palettes: [],
 user: {
     username: "",
-    id: null
+    // id: null
     },
 selectedPalette: {
     colors: [],
@@ -22,10 +22,7 @@ export function reducer(state=initialState, action) {
         case 'FETCH_PALETTE':
             console.log("getting one palette", action.payload)
             return {...state, selectedPalette: action.payload}
-        case 'ADD_USER':
-            console.log(action)
-            return {...state, user: action.payload}
-        case 'FIND_USER':
+        case 'SET_USER':
             console.log(action.payload) 
             return {...state, user: action.payload}
         case 'SET_FILTERED':

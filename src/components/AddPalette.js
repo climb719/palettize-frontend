@@ -5,7 +5,7 @@ import Select from 'react-select'
 import makeAnimated from 'react-select/animated';
 import { tagOptions } from './data';
 
-function AddPalette ({paletteTags}) {
+function AddPalette (props) {
         //console.log(paletteTags)
     const [colors, setColors] = useState([])
     const [optionSelected, setSelected] = useState("")
@@ -14,7 +14,7 @@ function AddPalette ({paletteTags}) {
     const animatedSelect = makeAnimated()
 
     const handleChange = (e) => setColors({...colors, [e.target.name]: e.target.value}, console.log(colors))
-    const handleSelectChange = (selected) => setSelected({optionSelected: selected}, console.log(selected))
+    const handleSelectChange = (selected) => setSelected({optionSelected: selected}, console.log(optionSelected))
 
     return (
         <div className="App-Main">
@@ -36,7 +36,7 @@ function AddPalette ({paletteTags}) {
             isMulti
             options={tagOptions}
             onChange={handleSelectChange}
-           
+         
             />
             <p><input type="submit" value="Submit" /></p>
             </form>            
