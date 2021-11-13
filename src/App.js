@@ -1,15 +1,15 @@
 import React from 'react'
 import './App.css'
 import { Route, Switch } from 'react-router-dom'
-import { Home, Create, Dashboard, Signup, Login, Nav, PaletteShow, FilteredPalettes, AddPalette } from './components'
+import { Home, Create, Dashboard, Signup, Login, Nav, PaletteContainer, PaletteShow, FilteredPalettes, AddPalette } from './components'
 import { connect } from 'react-redux'
-import PaletteContainer from './containers/PalleteContainer'
+
 
 
 function App(props) {
 
   console.log(props)
-
+  console.log(localStorage.token)
   return (
     <div className="App">
       <Nav />

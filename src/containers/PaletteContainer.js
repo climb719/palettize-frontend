@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import PaletteCard from '../components/PaletteCard'
 import { getPalettes } from '../redux/actionCreators'
 import { useEffect } from "react"
- import  { TagButtons } from '../components'
+import  { TagButtons } from '../components'
 
 function PaletteContainer({getPalettes, palettes}) {
     //destructuring - instead of props and then using props.palettes 
