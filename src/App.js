@@ -2,7 +2,7 @@ import './App.css'
 import { Route, Switch } from 'react-router-dom'
 import { Home, Create, Dashboard, Signup, Login, Nav, PaletteContainer, PaletteShow, FilteredPalettes, AddPalette } from './components'
 import { connect } from 'react-redux'
-import {useEffect} from 'react'
+import { useEffect } from 'react'
 import { autoLogin } from './redux/actionCreators'
 
 

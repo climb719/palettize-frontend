@@ -3,14 +3,14 @@ import { useLocation,  useHistory  } from 'react-router-dom'
 import { filterPalettes } from '../redux/actionCreators'
 
 
-function TagButtons ({tags, palettes, id, paletteTags, filterPalettes}) {
+function TagButtons ({tags, palettes, id, filterPalettes}) {
 
     const location = useLocation()
     const history = useHistory();
     console.log(location)
     console.log(id)
 
-    const allTags = paletteTags.flat()
+    const allTags = palettes.map(palette => palette.tags).flat()
     const uniqueTags = [...new Set(allTags)].sort()
     console.log(uniqueTags)
 
@@ -48,7 +48,7 @@ function TagButtons ({tags, palettes, id, paletteTags, filterPalettes}) {
   const mapStateToProps = (state) => {
     return {...state.selectedPalette,
        palettes: state.palettes,
-       paletteTags: state.palettes.map(palette => palette.tags)  
+      //  paletteTags: state.palettes.map(palette => palette.tags)  
     }
 }
 
