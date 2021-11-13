@@ -1,15 +1,19 @@
-import React from 'react'
 import './App.css'
 import { Route, Switch } from 'react-router-dom'
 import { Home, Create, Dashboard, Signup, Login, Nav, PaletteContainer, PaletteShow, FilteredPalettes, AddPalette } from './components'
 import { connect } from 'react-redux'
+import {useEffect} from 'react'
+import { autoLogin } from './redux/actionCreators'
 
 
 
-function App(props) {
+function App({autoLogin}) {
 
-  console.log(props)
+  
   console.log(localStorage.token)
+
+  useEffect(() => localStorage.stoken && autoLogin(), [autoLogin])
+
   return (
     <div className="App">
       <Nav />
@@ -34,4 +38,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps, {autoLogin})(App)
