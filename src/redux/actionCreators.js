@@ -7,6 +7,7 @@ export const filterPalettes = (filteredPalettes) => ({type: "SET_FILTERED", payl
 // export const setTags = (uniqueTags) => ({type: "SET_TAGS", payload: uniqueTags})
     
 //export const setImage = () => ({type: "SET_IMAGE"})
+export const clearUser = () => ({type: "CLEAR_USER"})
 
 export const getPalettes = () => {
     return dispatch => fetch(API + 'palettes')
@@ -73,6 +74,8 @@ export const autoLogin = () => {
         dispatch({type: "SET_USER", payload: data.user})
          })
         }
+
+        
     
 
     

@@ -1,13 +1,19 @@
-
+import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import { clearUser } from '../redux/actionCreators'
 
 function Nav(props){
 
-  console.log(props)
+  console.log(props.user)
+
+ 
 
   const handleLogout = () => {
+      props.clearUser()
       props.logout()
+   
   }
+
   return <nav>
       <div className="nav-bar">
       <NavLink  className="nav-link" to="/palettes">Browse Palettes</NavLink>&nbsp;
@@ -21,4 +27,4 @@ function Nav(props){
   </nav>
 }
 
-export default Nav
+export default connect(null, {clearUser})(Nav)

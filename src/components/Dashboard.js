@@ -1,6 +1,7 @@
 const Dashboard = props => {
     console.log(props)
   return (
+  
     <div className="App-Main">
     
       <div className="dashboard">

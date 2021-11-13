@@ -7,7 +7,7 @@ user: {
 selectedPalette: {
     colors: [],
     tags: []
-},
+    },
 filtered: []
 }
 
@@ -28,6 +28,9 @@ export function reducer(state=initialState, action) {
         case 'SET_FILTERED':
             console.log(action.payload)
             return {...state, filtered: action.payload}
+        case 'CLEAR_USER':
+            console.log(action)
+            return {...state, user: null}
     
         default:
             return {...state}

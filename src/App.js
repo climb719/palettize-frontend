@@ -9,16 +9,14 @@ import { autoLogin } from './redux/actionCreators'
 
 function App({user, autoLogin}) {
 
-  
   console.log(localStorage.token)
 
  useEffect(() => localStorage.token && autoLogin(), [autoLogin])
+ 
 
  const logout = () => {
    console.log("logout")
    localStorage.removeItem("token")
-   console.log(user)
-   
  }
 
   return (
@@ -27,7 +25,7 @@ function App({user, autoLogin}) {
       <Switch>
       <Route path="/signup"  render={(routeProps) => <Signup {...routeProps} />}/> 
       <Route path="/login"  render={(routeProps) => <Login {...routeProps} />}/> 
-      <Route path='/dashboard' component={Dashboard} />
+      <Route path='/dashboard' render={(routeProps) => <Dashboard user={user} {...routeProps} />} />
       <Route path='/palettes/:id'component={PaletteShow} />
       <Route path='/palettes'component={PaletteContainer} />
       <Route path='/filtered-palettes' component={FilteredPalettes} />
