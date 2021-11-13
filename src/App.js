@@ -7,16 +7,20 @@ import { autoLogin } from './redux/actionCreators'
 
 
 
-function App({autoLogin}) {
+function App({user, autoLogin}) {
 
   
   console.log(localStorage.token)
 
  useEffect(() => localStorage.token && autoLogin(), [autoLogin])
 
+ const logout = () => {
+   console.log("logout")
+ }
+
   return (
     <div className="App">
-      <Nav />
+      <Nav logout={logout} user={user} />
       <Switch>
       <Route path="/signup"  render={(routeProps) => <Signup {...routeProps} />}/> 
       <Route path="/login"  render={(routeProps) => <Login {...routeProps} />}/> 

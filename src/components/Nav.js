@@ -1,7 +1,13 @@
 
 import { NavLink } from 'react-router-dom'
 
-function Nav(){
+function Nav(props){
+
+  console.log(props)
+
+  const handleLogout = () => {
+      props.logout()
+  }
   return <nav>
       <div className="nav-bar">
       <NavLink  className="nav-link" to="/palettes">Browse Palettes</NavLink>&nbsp;
@@ -10,7 +16,7 @@ function Nav(){
       <NavLink className="nav-link" to="/signup">Sign up</NavLink>&nbsp;
       <NavLink className="nav-link" to="/create">Create</NavLink>&nbsp;
       <NavLink className="nav-link" to="/add">Add A Palette</NavLink>&nbsp;
-      <NavLink className="nav-link" to="/">Logout</NavLink>&nbsp;
+      <NavLink onClick={handleLogout} className="nav-link" to="/logout">Logout</NavLink>&nbsp;
       </div>
   </nav>
 }
