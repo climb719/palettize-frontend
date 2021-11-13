@@ -5,10 +5,10 @@ import { useEffect } from "react"
 import { Link } from 'react-router-dom'
 import  { TagButtons, Save } from './index'
 
-function PaletteShow({getPalette, colors, length, tags }) {
+function PaletteShow({getPalette, colors, length, tags, palette }) {
    console.log(tags)
    const routeId = useParams().id 
-    console.log(length)
+    console.log(palette)
     console.log(routeId)
    useEffect(() => {
        console.log("getting your palette")
@@ -25,13 +25,14 @@ function PaletteShow({getPalette, colors, length, tags }) {
            <p> <Link className="show-link" to={`/palettes/${parseInt(routeId) + 1}`}>Go to Next Palette</Link> </p>
             }  
             <TagButtons id={routeId} />
-           <p><Save /></p>
+           <p><Save id={routeId} palette={palette}/></p>
         </div>
             )
 }
 
 const mapStateToProps = (state) => {
     return {...state.selectedPalette,
+        palette: state.selectedPalette, 
     length: state.palettes.length
     }
   }

@@ -65,19 +65,29 @@ export const findUser = (user, history) => {
 export const autoLogin = () => {
     return dispatch => fetch("http://localhost:3000/autologin", {
         headers: {
-            'Authorization': localStorage.token
+                'Authorization': localStorage.token
             }
-        })
+            })
         .then(res => res.json())
         .then(data => {
-        localStorage.token = data.token
-        dispatch({type: "SET_USER", payload: data.user})
-         })
-        }
-
-export const postSave = () => {
-
+            localStorage.token = data.token
+            dispatch({type: "SET_USER", payload: data.user})
+        })
 }
+
+export const postSave = (id) => {
+    // return dispatch => fetch(`http://localhost:3000/palettes/${id}/save`, {
+    //  method: 'POST', 
+    //     headers: {
+    //         'Authorization': localStorage.token
+    //         },
+    //         body: JSON.stringify(),
+    //     })
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         console.log(data)
+    // })
+}   
 
         
     
