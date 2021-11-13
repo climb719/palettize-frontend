@@ -16,6 +16,9 @@ function App({user, autoLogin}) {
 
  const logout = () => {
    console.log("logout")
+   localStorage.removeItem("token")
+   console.log(user)
+   
  }
 
   return (
@@ -39,6 +42,7 @@ function App({user, autoLogin}) {
 const mapStateToProps = state => {
   return {
     user: state.user
+    
   }
 }
 
