@@ -12,7 +12,7 @@ function App({autoLogin}) {
   
   console.log(localStorage.token)
 
-  useEffect(() => localStorage.stoken && autoLogin(), [autoLogin])
+ useEffect(() => localStorage.token && autoLogin(), [autoLogin])
 
   return (
     <div className="App">
