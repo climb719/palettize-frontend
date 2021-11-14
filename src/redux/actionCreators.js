@@ -5,8 +5,6 @@ const API = 'http://localhost:3000/'
 
 export const filterPalettes = (filteredPalettes) => ({type: "SET_FILTERED", payload: filteredPalettes})
 // export const setTags = (uniqueTags) => ({type: "SET_TAGS", payload: uniqueTags})
-
-export const postSave = (palette) => ({type: "SAVE_PALETTE", payload: palette})
     
 //export const setImage = () => ({type: "SET_IMAGE"})
 export const clearUser = () => ({type: "CLEAR_USER"})
@@ -77,19 +75,19 @@ export const autoLogin = () => {
         })
 }
 
-
-    // return dispatch => fetch(`http://localhost:3000/palettes/${id}/save`, {
-    //  method: 'POST', 
-    //     headers: {
-    //         'Authorization': localStorage.token
-    //         },
-    //         body: JSON.stringify(),
-    //     })
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         console.log(data)
-    // })
-//}   
+export const postSave = (palette, id) => {
+    return dispatch => fetch(`http://localhost:3000/palettes/${id}/save`, {
+     method: 'POST', 
+        headers: {
+            'Authorization': localStorage.token
+            },
+            body: JSON.stringify(palette),
+        })
+        .then(res => res.json())
+        .then(data => {
+            dispatch({type: "SAVE_PALETTE", payload: data.palette})
+    })
+}   
 
         
     
