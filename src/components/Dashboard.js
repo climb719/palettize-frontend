@@ -1,5 +1,8 @@
+import { connect } from 'react-redux'
+
 const Dashboard = props => {
     console.log(props)
+
   return (
   
     <div className="App-Main">
@@ -15,5 +18,12 @@ const Dashboard = props => {
 
 }
 
-export default Dashboard
+const mapStateToProps = state => {
+  return {
+    userPalettes: state.userPalettes
+    
+  }
+}
+
+export default connect(mapStateToProps)(Dashboard)
 
