@@ -3,11 +3,11 @@ import { Route, Switch } from 'react-router-dom'
 import { Home, Create, Dashboard, Signup, Login, Nav, PaletteContainer, PaletteShow, FilteredPalettes, AddPalette } from './components'
 import { connect } from 'react-redux'
 import { useEffect } from 'react'
-import { autoLogin } from './redux/actionCreators'
+import { autoLogin, clearUser } from './redux/actionCreators'
 
 
 
-function App({user, autoLogin}) {
+function App({user, autoLogin, clearUser}) {
 
   console.log(localStorage.token)
 
@@ -17,6 +17,7 @@ function App({user, autoLogin}) {
  const logout = () => {
    console.log("logout")
    localStorage.removeItem("token")
+   clearUser()
  }
 
   return (
@@ -44,4 +45,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {autoLogin})(App)
+export default connect(mapStateToProps, {autoLogin, clearUser})(App)
