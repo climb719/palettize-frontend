@@ -76,7 +76,7 @@ export const autoLogin = () => {
 }
 
 export const postSave = (palette, id) => {
-    return dispatch => fetch(`http://localhost:3000/palettes/${id}/save`, {
+    return dispatch => fetch(`http://localhost:3000/palettes/${id}/saves`, {
      method: 'POST', 
         headers: {
             'Authorization': localStorage.token
