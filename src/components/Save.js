@@ -1,12 +1,13 @@
 import { connect } from 'react-redux'
 import { postSave } from '../redux/actionCreators'
-function Save (props) {
+function Save ({user, palette, postSave}) {
 
-  console.log(props)
-  console.log(props.user)
-  console.log(props.palette)
-  const handleSave = (e) => {
-    console.log(e)
+ 
+  console.log(user)
+  console.log(palette)
+  const handleSave = (palette) => {
+
+    postSave(palette)
   }
  
     return <button onClick={handleSave} className="save-button">Save this Palette </button>

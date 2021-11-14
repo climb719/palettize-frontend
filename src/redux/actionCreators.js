@@ -5,6 +5,8 @@ const API = 'http://localhost:3000/'
 
 export const filterPalettes = (filteredPalettes) => ({type: "SET_FILTERED", payload: filteredPalettes})
 // export const setTags = (uniqueTags) => ({type: "SET_TAGS", payload: uniqueTags})
+
+export const postSave = (palette) => ({type: "SAVE_PALETTE", payload: palette})
     
 //export const setImage = () => ({type: "SET_IMAGE"})
 export const clearUser = () => ({type: "CLEAR_USER"})
@@ -75,7 +77,7 @@ export const autoLogin = () => {
         })
 }
 
-export const postSave = (id) => {
+
     // return dispatch => fetch(`http://localhost:3000/palettes/${id}/save`, {
     //  method: 'POST', 
     //     headers: {
@@ -87,7 +89,7 @@ export const postSave = (id) => {
     //     .then(data => {
     //         console.log(data)
     // })
-}   
+//}   
 
         
     

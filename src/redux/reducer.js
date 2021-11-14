@@ -1,14 +1,14 @@
 const initialState = {
     palettes: [],
 user: {
-    username: "",
-    // id: null
+    username: ""
     },
 selectedPalette: {
     colors: [],
     tags: []
     },
-filtered: []
+filtered: [],
+userPalettes: []
 }
 
 export function reducer(state=initialState, action) {
@@ -31,6 +31,9 @@ export function reducer(state=initialState, action) {
         case 'CLEAR_USER':
             console.log(action)
             return {...state, user: null}
+        case 'SAVE_PALETTE':
+            console.log(action.payload, "hello new palette")
+            return {...state, userPalettes: action.payload }
     
         default:
             return {...state}
