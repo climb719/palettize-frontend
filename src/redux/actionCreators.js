@@ -97,14 +97,19 @@ export const addNewPalette = (palette, history) => {
             'Content-Type': 'application/json',
             },
             body: JSON.stringify({palette}),
+        
         })
+      
         .then(resp => resp.json())
         .then(data =>     {
+            console.log(palette) 
+            console.log(data)
             if (data.errors) {
                 alert(data.errors)
             } else {
-                dispatch({type: "ADD_PALETTE", payload: data.palette})
-                history.history.push('/palettes')     
+                console.log(data)
+                dispatch({type: "ADD_PALETTE", payload: data})
+                 
                 alert("Your palette has been added!")
             }
         })        
