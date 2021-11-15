@@ -22,12 +22,13 @@ function AddPalette (props) {
         e.preventDefault()
         let paletteArr = Object.values(colors)
       
-        let tagArr = optionSelected.optionSelected.map(tag => tag.value)
-        console.log(tagArr)
+        let nestedTags = optionSelected.optionSelected
+        let tagArr = nestedTags.map(tag => tag.value)
         if (paletteArr.length !== 4) {
             alert("You have not selected 4 colors, make sure you have made your own selection for colors 1-4")
         } else {
         console.log(paletteArr)
+        console.log(tagArr)
         }
         
        // debugger 
