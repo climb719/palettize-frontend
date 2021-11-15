@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import { useLocation,  useHistory  } from 'react-router-dom'
 import { filterPalettes } from '../redux/actionCreators'
+import { v4 as uuidv4 } from 'uuid';
 
 
 function TagButtons ({tags, palettes, id, filterPalettes}) {
@@ -35,10 +36,10 @@ function TagButtons ({tags, palettes, id, filterPalettes}) {
         <div>
         { (location.pathname === `/palettes/${id}`) ? 
         <div className="tags-container">
-        {tags.map((tag, index) => <button onClick={handleClick} className="tag-buttons" key={index}> {tag} </button>)}
+        {tags.map((tag, index) => <button onClick={handleClick} className="tag-buttons" key={uuidv4()}> {tag} </button>)}
         </div> :
         <div className="lib-dashboard">
-        {uniqueTags.map((tag) => <ul> <button onClick={handleClick} className="lib-buttons" key={tag}> {tag} </button> </ul>)} 
+        {uniqueTags.map((tag) => <ul> <button onClick={handleClick} className="lib-buttons" key={uuidv4()}> {tag} </button> </ul>)} 
         </div>
         }
         </div>

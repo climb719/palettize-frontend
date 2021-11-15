@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { getPalette } from '../redux/actionCreators'
 import { useEffect } from "react"
 import { Link } from 'react-router-dom'
-import  { TagButtons, Save } from './index'
+import  { TagButtons, Favorite } from './index'
 
 function PaletteShow({getPalette, colors, length, tags, palette }) {
    console.log(tags)
@@ -25,7 +25,7 @@ function PaletteShow({getPalette, colors, length, tags, palette }) {
            <p> <Link className="show-link" to={`/palettes/${parseInt(routeId) + 1}`}>Go to Next Palette</Link> </p>
             }  
             <TagButtons id={routeId} />
-           <p><Save id={routeId} palette={palette}/></p>
+           <p><Favorite id={routeId} palette={palette}/></p>
         </div>
             )
 }
