@@ -1,12 +1,12 @@
 import { connect } from 'react-redux'
-import { PaletteCard } from '../components/index'
-import { useEffect } from "react"
-import { getUserPalettes } from '../redux/actionCreators'
+// import { PaletteCard } from '../components/index'
+// import { useEffect } from "react"
+// import { getUserPalettes } from '../redux/actionCreators'
 
 const Dashboard = (props) => {
     console.log(props)
 
-    useEffect(props.getUserPalettes, [props.getUserPalettes])
+    // useEffect(props.getUserPalettes, [props.getUserPalettes])
 
   return (
   
@@ -34,6 +34,6 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {getUserPalettes})(Dashboard)
-
+export default connect(mapStateToProps)(Dashboard)
+// {getUserPalettes}
 // {props.userPalettes.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )}

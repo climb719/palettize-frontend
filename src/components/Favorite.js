@@ -1,22 +1,22 @@
 import { connect } from 'react-redux'
-import { postSave } from '../redux/actionCreators'
+import { postFavroite } from '../redux/actionCreators'
 import { useHistory } from 'react-router-dom'
 
 
-function Save ({id, palette, user, postSave}) {
+function Favroite ({id, palette, user, postFavroite}) {
 
  
   const history = useHistory()
  // console.log(palette)
-  const handleSave = (e) => {
+  const handleFavroite = (e) => {
     e.preventDefault()
     console.log(id)
     console.log(palette)
-    postSave(palette, id)
+    postFavroite(palette, id)
     history.push('/dashboard')  
   }
  
-    return <button onClick={handleSave} className="save-button">Save this Palette </button>
+    return <button onClick={handleFavroite} className="favroite-button">Save this Palette </button>
   }
   
   const mapStateToProps = state => {
@@ -26,4 +26,4 @@ function Save ({id, palette, user, postSave}) {
     }
   }
   
-  export default connect(mapStateToProps, {postSave})(Save)
+  export default connect(mapStateToProps, {postFavroite})(Favroite)
