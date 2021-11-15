@@ -1,27 +1,27 @@
-import React from 'react'
 import { useState } from 'react'
 import { connect } from 'react-redux'
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated';
 import { tagOptions } from './data';
+import { addNewPalette } from '../redux/actionCreators'
+import { useHistory } from 'react-router-dom'
 
-function AddPalette (props) {
-        //console.log(paletteTags)
+function AddPalette(props) {
+    console.log(props)
+    const history = useHistory()
     const [colors, setColors] = useState([])
     const [optionSelected, setSelected] = useState("")
-    // const [palette, setPalette] = useState({colors: [], tags: []})
-
-
+    const [palette, setPalette] = useState({colors: [], tags: []})
+  
     const animatedSelect = makeAnimated()
 
-    const handleChange = (e) => setColors({...colors, [e.target.name]: e.target.value}, console.log(colors))
+    const handleColorChange = (e) => setColors({...colors, [e.target.name]: e.target.value}, console.log(colors))
     
     const handleSelectChange = (selected) => setSelected({optionSelected: selected}, console.log(optionSelected))
-
+    
     const handleSubmit = (e) => {
         e.preventDefault()
         let paletteArr = Object.values(colors)
-      
         let nestedTags = optionSelected.optionSelected
         let tagArr = nestedTags.map(tag => tag.value)
         if (paletteArr.length !== 4) {
@@ -29,6 +29,14 @@ function AddPalette (props) {
         } else {
         console.log(paletteArr)
         console.log(tagArr)
+        
+        setPalette({
+            colors: palette.colors.push(...paletteArr),
+            tags: palette.tags.push(...tagArr)
+        })
+        console.log(palette)
+        debugger
+        props.addNewPalette(palette, history)
         }
         
        // debugger 
@@ -42,10 +50,10 @@ function AddPalette (props) {
             <form onSubmit={handleSubmit}> 
             <p>Choose your palettes's colors:</p>
             <div>
-            <p>Color 1: <input required={true} type="color" id="color1" name="color1" value={colors[0]} onChange={handleChange} /></p>
-            <p>Color 2: <input type="color" id="color2" name="color2" value={colors[1]}  onChange={handleChange}/></p>
-            <p>Color 3: <input type="color" id="color3" name="color3" value={colors[2]}  onChange={handleChange}/></p>
-            <p>Color 4: <input type="color" id="color4" name="color4" value={colors[3]} onChange={handleChange}/></p> 
+            <p>Color 1: <input type="color" id="color1" name="color1" value={colors[0]} onChange={handleColorChange} /></p>
+            <p>Color 2: <input type="color" id="color2" name="color2" value={colors[1]} onChange={handleColorChange}/></p>
+            <p>Color 3: <input type="color" id="color3" name="color3" value={colors[2]} onChange={handleColorChange}/></p>
+            <p>Color 4: <input type="color" id="color4" name="color4" value={colors[3]} onChange={handleColorChange}/></p> 
             </div> 
             <Select
             closeMenuOnSelect={false}
@@ -54,7 +62,6 @@ function AddPalette (props) {
             isMulti
             options={tagOptions}
             onChange={handleSelectChange}
-         
             />
             <p><input type="submit" value="Submit" /></p>
             </form>            
@@ -65,12 +72,11 @@ function AddPalette (props) {
 
 }
 
-const mapStateToProps = (state) => {
-    return {
-       paletteTags: state.palettes.map(palette => palette.tags)  
-    }
-}
 
-export default connect(mapStateToProps)(AddPalette)
+const mapDispatchToProps = (dispatch, history) => ({
+    addNewPalette: palette => dispatch(addNewPalette(palette, history))
+  })
+
+export default connect(mapDispatchToProps)(AddPalette)
 
 

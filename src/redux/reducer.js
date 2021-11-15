@@ -34,7 +34,9 @@ export function reducer(state=initialState, action) {
         case 'FAVORITE_PALETTE':
             console.log(action.payload, "hello new palette")
             return {...state, userPalettes: action.payload }
-    
+        case 'ADD_PALETTE':
+            console.log(action.payload, "new palette!")
+            return {...state, selectedPalette: action.payload}
         default:
             return {...state}
     }

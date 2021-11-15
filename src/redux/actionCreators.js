@@ -90,6 +90,25 @@ export const postFavroite = (palette, id) => {
     })
 }   
 
+export const addNewPalette = (palette) => {
+    return  dispatch => fetch(API + 'palettes', {
+        method: 'POST', 
+        headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({palette}),
+        })
+        .then(resp => resp.json())
+        .then(data =>     {
+            if (data.errors) {
+                alert(data.errors)
+            } else {
+                dispatch({type: "ADD_PALETTE", payload: data.palette})
+                  
+            }
+        })        
+    }
+
         
     
 
