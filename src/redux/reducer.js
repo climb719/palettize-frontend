@@ -36,7 +36,7 @@ export function reducer(state=initialState, action) {
             return {...state, userPalettes: action.payload }
         case 'ADD_PALETTE':
             console.log(action.payload, "new palette!")
-            return {...state, selectedPalette: action.payload}
+            return {...state, palettes: state.palettes.push(action.payload)}
         default:
             return {...state}
     }

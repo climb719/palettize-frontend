@@ -90,7 +90,7 @@ export const postFavroite = (palette, id) => {
     })
 }   
 
-export const addNewPalette = (palette) => {
+export const addNewPalette = (palette, history) => {
     return  dispatch => fetch(API + 'palettes', {
         method: 'POST', 
         headers: {
@@ -104,7 +104,8 @@ export const addNewPalette = (palette) => {
                 alert(data.errors)
             } else {
                 dispatch({type: "ADD_PALETTE", payload: data.palette})
-                  
+                history.history.push('/palettes')     
+                alert("Your palette has been added!")
             }
         })        
     }

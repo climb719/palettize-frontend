@@ -7,16 +7,15 @@ import { addNewPalette } from '../redux/actionCreators'
 import { useHistory } from 'react-router-dom'
 
 function AddPalette(props) {
-    console.log(props)
+    //console.log(props)
     const history = useHistory()
+    const animatedSelect = makeAnimated()
+
     const [colors, setColors] = useState([])
     const [optionSelected, setSelected] = useState("")
     const [palette, setPalette] = useState({colors: [], tags: []})
   
-    const animatedSelect = makeAnimated()
-
     const handleColorChange = (e) => setColors({...colors, [e.target.name]: e.target.value}, console.log(colors))
-    
     const handleSelectChange = (selected) => setSelected({optionSelected: selected}, console.log(optionSelected))
     
     const handleSubmit = (e) => {
@@ -35,11 +34,9 @@ function AddPalette(props) {
             tags: palette.tags.push(...tagArr)
         })
         console.log(palette)
-        debugger
+        // debugger
         props.addNewPalette(palette, history)
         }
-        
-       // debugger 
     }
 
     return (
@@ -77,6 +74,6 @@ const mapDispatchToProps = (dispatch, history) => ({
     addNewPalette: palette => dispatch(addNewPalette(palette, history))
   })
 
-export default connect(mapDispatchToProps)(AddPalette)
+export default connect(null, mapDispatchToProps)(AddPalette)
 
 
