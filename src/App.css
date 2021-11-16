@@ -113,7 +113,12 @@ nav:active {
 }
 
 .palettes {
-  margin-top: 5%;
+  margin-top: 7%;
+  margin-left: 10%; 
+}
+
+.no-palettes {
+
 }
 
 
@@ -131,9 +136,6 @@ nav:active {
   font-size: 14px;
   border-radius: 10px;
   padding: 5px 12px;
-
- 
-
 }
 
 .lib-buttons:hover {
@@ -170,7 +172,6 @@ nav:active {
   border-radius: 10px;
   padding: 4px 10px;
   margin: 10px;
-
 }
 
 .tag-buttons:hover {

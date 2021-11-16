@@ -23,6 +23,7 @@ function TagButtons ({tags, palettes, id, filterPalettes}) {
 
     const handleClick= (e) => {
         console.log(e.target.innerText)
+        let color = e.target.innerText
         const filteredPalettes = palettes.filter(palette => palette.tags.includes(e.target.innerText))
         filterPalettes(filteredPalettes)
         history.push('/filtered-palettes')

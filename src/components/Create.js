@@ -1,4 +1,5 @@
 import React from 'react'
+
 // import { connect } from 'react-redux'
 import { ColorExtractor } from 'react-color-extractor'
 // import { test } from '../redux/actionCreators'
@@ -50,7 +51,7 @@ class Create extends React.Component {
             </ColorExtractor>
             <form>
               <input type="text" name="image" placeholder="drop a url here..." size="50" onChange={this.onChange} value={this.state.image} />&nbsp;
-              <input type="submit" value="Upload"/>&nbsp;
+              &nbsp;
               <input type="submit" value="Reset" onClick={this.handleClick}/>
             </form>
             <div >
