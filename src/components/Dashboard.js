@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 // import { PaletteCard } from '../components/index'
-import { useEffect } from "react"
+// import { useEffect } from "react"
 import { getUserPalettes } from '../redux/actionCreators'
-import { NavLink, useHistory } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Dashboard = (props, {getUserPalettes}) => {
     console.log(props)

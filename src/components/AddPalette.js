@@ -20,6 +20,8 @@ function AddPalette(props) {
     
     const handleSubmit = (e) => {
         e.preventDefault()
+        console.log(colors)
+        console.log(optionSelected)
         let paletteArr = Object.values(colors)
         let nestedTags = optionSelected.optionSelected
         let tagArr = nestedTags.map(tag => tag.value)

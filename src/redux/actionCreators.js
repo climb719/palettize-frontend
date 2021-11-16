@@ -82,7 +82,7 @@ export const postFavroite = (palette, id, history) => {
         headers: {
             'Authorization': localStorage.token
             },
-            body: JSON.stringify(palette),
+            body: JSON.stringify({favorite: palette}),
         })
         .then(res => res.json())
         
