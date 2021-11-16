@@ -8,7 +8,7 @@ selectedPalette: {
     tags: []
     },
 filtered: [],
-userPalettes: []
+userFavorites: []
 }
 
 export function reducer(state=initialState, action) {
@@ -33,7 +33,7 @@ export function reducer(state=initialState, action) {
             return {...state, user: null}
         case 'FAVORITE_PALETTE':
             console.log(action.payload, "hello favorite palette")
-            return {...state, userPalettes: [...state.userPalettes, action.payload]}
+            return {...state, userFavorites: [...state.userFavorites, action.payload]}
         case 'ADD_PALETTE':
             console.log(action.payload, "new palette!")
             return {...state, palettes: [...state.palettes, action.payload]}

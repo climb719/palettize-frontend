@@ -1,13 +1,13 @@
 import { connect } from 'react-redux'
 // import { PaletteCard } from '../components/index'
 // import { useEffect } from "react"
-import { getUserPalettes } from '../redux/actionCreators'
+import { getUserFavorites } from '../redux/actionCreators'
 import { NavLink } from 'react-router-dom'
 
-const Dashboard = (props, {getUserPalettes}) => {
+const Dashboard = (props, {getUserFavorites}) => {
     console.log(props)
 
-    console.log(props.userPalettes)
+    console.log(props.userFavorites)
 
     //useEffect(getUserPalettes, [getUserPalettes])
 
@@ -15,7 +15,7 @@ const Dashboard = (props, {getUserPalettes}) => {
   
     <div className="App-Main">
   
-      {(props.userPalettes.length === 0)? 
+      {(props.userFavorites.length === 0)? 
       <div className="no-palettes"><p>Looks Like you haven't saved any palettes yet, get started here: </p><NavLink to="/palettes"> Palette Library</NavLink> </div>:
       <div className="dashboard">
         <h2 className="my_palettes">My Palettes</h2>
@@ -34,11 +34,11 @@ const Dashboard = (props, {getUserPalettes}) => {
 
 const mapStateToProps = state => {
   return {
-    userPalettes: state.userPalettes
+    userFavorites: state.userFavorites
     
   }
 }
 
-export default connect(mapStateToProps, {getUserPalettes})(Dashboard)
+export default connect(mapStateToProps, {getUserFavorites})(Dashboard)
 // {getUserPalettes}
 // {props.userPalettes.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )}
