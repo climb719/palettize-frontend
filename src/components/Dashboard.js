@@ -6,7 +6,7 @@ import { getUserPalettes } from '../redux/actionCreators'
 const Dashboard = (props, {getUserPalettes}) => {
     console.log(props)
 
-    useEffect(getUserPalettes, [getUserPalettes])
+    //useEffect(getUserPalettes, [getUserPalettes])
 
   return (
   

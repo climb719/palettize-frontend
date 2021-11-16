@@ -8,9 +8,7 @@ function TagButtons ({tags, palettes, id, filterPalettes}) {
 
     const location = useLocation()
     const history = useHistory();
-    console.log(location)
-    console.log(id)
-
+  
     const allTags = palettes.map(palette => palette.tags).flat()
     const uniqueTags = [...new Set(allTags)].sort()
     console.log(uniqueTags)
@@ -36,7 +34,7 @@ function TagButtons ({tags, palettes, id, filterPalettes}) {
         <div>
         { (location.pathname === `/palettes/${id}`) ? 
         <div className="tags-container">
-        {tags.map((tag, index) => <button onClick={handleClick} className="tag-buttons" key={uuidv4()}> {tag} </button>)}
+        {tags.map((tag) => <button onClick={handleClick} className="tag-buttons" key={uuidv4()}> {tag} </button>)}
         </div> :
         <div className="lib-dashboard">
         {uniqueTags.map((tag) => <ul> <button onClick={handleClick} className="lib-buttons" key={uuidv4()}> {tag} </button> </ul>)} 
