@@ -12,8 +12,8 @@ function Favroite ({id, palette, user, postFavroite}) {
     e.preventDefault()
     console.log(id)
     console.log(palette)
-    postFavroite(palette, id)
-    history.push('/dashboard')  
+    postFavroite(palette, id, history)
+    console.log(palette)
   }
  
     return <button onClick={handleFavroite} className="favroite-button">Save this Palette </button>
