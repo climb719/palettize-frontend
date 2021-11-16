@@ -11,7 +11,6 @@ function Favroite ({id, palette, user, postFavroite}) {
   const handleFavroite = (e) => {
     e.preventDefault()
     console.log(id)
-    console.log(palette)
     postFavroite(palette, id, history)
     console.log(palette)
   }

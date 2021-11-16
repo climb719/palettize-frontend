@@ -85,11 +85,11 @@ export const postFavroite = (palette, id, history) => {
             body: JSON.stringify(palette),
         })
         .then(res => res.json())
+        
         .then(data => {
             console.log(palette) 
             console.log(data)
-            console.log(history)
-            dispatch({type: "FAVORITE_PALETTE", payload: palette})
+            dispatch({type: "FAVORITE_PALETTE", payload: data})
             history.push('/dashboard')  
     })
 }   
