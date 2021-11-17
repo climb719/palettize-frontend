@@ -4,7 +4,7 @@ import { PaletteCard, TagButtons } from '../components/index'
 //import { getUser } from '../redux/actionCreators'
 import { NavLink } from 'react-router-dom'
 
-const Dashboard = ({user, getUser}) => {
+const Dashboard = ({user}) => {
 
 
     // const id = user.id

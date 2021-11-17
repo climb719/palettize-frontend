@@ -1,8 +1,6 @@
 import React from 'react'
-
-// import { connect } from 'react-redux'
 import { ColorExtractor } from 'react-color-extractor'
-// import { test } from '../redux/actionCreators'
+
 
 class Create extends React.Component {
 
@@ -15,13 +13,12 @@ class Create extends React.Component {
         this.setState({[e.target.name]: e.target.value})
       }
 
-      handleClick = (e) => {
-        e.preventDefault()
-        // this.props.test()
-        console.log(this.state.image)
-        this.setState({image: "", colors: []}) 
+    handleClick = (e) => {
+       e.preventDefault()
+       this.setState({image: "", colors: []}) 
     }
 
+ 
     getColors = colors =>
     this.setState(state => ({ colors: [...state.colors, ...colors] }))
        
@@ -54,17 +51,16 @@ class Create extends React.Component {
               &nbsp;
               <input type="submit" value="Reset" onClick={this.handleClick}/>
             </form>
-            <div >
+              <div >
                 {this.renderSwatches()}  
-               <p> <button id="save-create" >Save this Palette</button></p>
-            </div>
+              </div>
         </div>
         )
     }
-
 }
 
-
-// hidden={this.state.colors.length<1}
 export default Create 
+// <p> <button id="save-create" >Save this Palette</button></p>
+// hidden={this.state.colors.length<1}
+
 
