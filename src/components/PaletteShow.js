@@ -5,11 +5,14 @@ import { useEffect } from "react"
 import { Link } from 'react-router-dom'
 import  { TagButtons, Favorite } from './index'
 
-function PaletteShow({getPalette, colors, length, tags, palette }) {
-   console.log(tags)
+function PaletteShow({user, getPalette, colors, length, tags, palette }) {
+   console.log(user)
    const routeId = useParams().id 
-    console.log(palette)
+    const userPaletteIds = user.palettes.map(p => p.id)
+    //debugger
+    console.log(userPaletteIds)
     console.log(routeId)
+    // const inUser = inUser.filer(p => !p.user.palettes.includes(routeId)
    useEffect(() => {
        console.log("getting your palette")
         getPalette(routeId)
@@ -25,7 +28,12 @@ function PaletteShow({getPalette, colors, length, tags, palette }) {
            <p> <Link className="show-link" to={`/palettes/${parseInt(routeId) + 1}`}>Go to Next Palette</Link> </p>
             }  
             <TagButtons id={routeId} />
-           <p><Favorite id={routeId} palette={palette}/></p>
+           {(user && userPaletteIds.includes(routeId)) ?
+            <p><Favorite id={routeId} palette={palette}/></p>:
+            ""}
+           {(user && userPaletteIds.includes(routeId)) ? 
+           <p> <button>Delete From My Favorites</button></p> :
+           <Link className="show-link" to={'/palettes'}>Back to All Palettes</Link>}&nbsp;
         </div>
             )
 }
