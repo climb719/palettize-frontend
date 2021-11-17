@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { PaletteCard } from '../components/index'
+import { PaletteCard, TagButtons } from '../components/index'
 // import { useEffect } from "react"
 // import { getUserFavorites } from '../redux/actionCreators'
 import { NavLink } from 'react-router-dom'
@@ -25,9 +25,12 @@ const Dashboard = ({user}) => {
   
       {(userPalettes.length === 0)? 
       <div className="no-palettes"><p>Looks Like you haven't saved any palettes yet, get started here: </p><NavLink to="/palettes"> Palette Library</NavLink> </div>:
-      <div className="dashboard">
-        <h2 className="my_palettes">My Palettes</h2>
+        <div>
+          <TagButtons />
+        <h2 className="palettes">My Palettes</h2>
+        <div className="palette-container">
         {userPalettes.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )}
+        </div>
         </div>
         }
   
