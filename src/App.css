@@ -75,7 +75,6 @@ nav:active {
 
 
 .App-Main {
-
     background-color: #282c34;
     min-height: 100vh;
     display: flex;
@@ -83,8 +82,7 @@ nav:active {
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: white;
-    
+    color: white; 
   }
   
 
@@ -97,7 +95,6 @@ nav:active {
   padding: 2em;
   padding-left: 12%;
   padding-bottom: 20%;
-
 }
 
 .filtered-container {
@@ -109,7 +106,6 @@ nav:active {
   padding: 2em;
   padding-left: 12%;
   padding-bottom: 60%;
-
 }
 
 .user-container {
@@ -121,7 +117,6 @@ nav:active {
   padding: 2em;
   padding-left: 12%;
   padding-bottom: 80%;
-
 }
 
 
@@ -133,10 +128,9 @@ nav:active {
 
 
 .lib-dashboard {
- position: absolute;
+  position: absolute;
   left: 1%;
   top: 27%;
-
   align-items: center;
   align-content: center;
 }
@@ -152,8 +146,6 @@ nav:active {
   background-color: gray;
 }
 
-
-
 .card {
   text-align: center;
   border: white solid 2px;
@@ -168,7 +160,7 @@ nav:active {
 }
 
 .show {
-  margin-top: 9%;
+  margin-top: 7%;
   height: 400px;
   width: 70%;
   object-fit: cover;

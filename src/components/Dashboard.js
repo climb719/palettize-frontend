@@ -1,4 +1,4 @@
-// import { connect } from 'react-redux'
+import { connect } from 'react-redux'
 import { PaletteCard, TagButtons } from '../components/index'
 // import { useEffect } from "react"
 // import { getUserFavorites } from '../redux/actionCreators'
@@ -41,18 +41,19 @@ const Dashboard = ({user}) => {
 
 }
 
-// const mapStateToProps = state => {
-//   return {
-//     userFavorites: state.userFavorites
+const mapStateToProps = state => {
+  return {
+    userFavorites: state.userFavorites,
+    user: state.user
     
-//   }
-// }
+  }
+}
 
 // const mapDispatchToProps = (dispatch) => ({
 //   getUserFavorites: id => dispatch(getUserFavorites(id))
 // })
 
 
-export default Dashboard
+export default connect(mapStateToProps)(Dashboard)
 // {getUserPalettes}
 // {userPalettes.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )}

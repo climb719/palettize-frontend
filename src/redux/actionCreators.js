@@ -1,5 +1,4 @@
 
-
 const API = 'http://localhost:3000/'
 
 
@@ -50,7 +49,7 @@ export const addUser = (user, history) => {
             } else {
                 localStorage.token = data.token
                 dispatch({type: "SET_USER", payload: data.user})
-                history.history.push('/dashboard')    
+                history.history.push('/palettes')    
             }
         })        
     }
@@ -70,7 +69,7 @@ export const findUser = (user, history) => {
             } else {
                 localStorage.token = data.token
                 dispatch({type: "SET_USER", payload: data.user})
-                history.history.push('/dashboard')    
+                history.history.push('/palettes')    
                 }
             })        
         }
@@ -130,6 +129,9 @@ export const addNewPalette = (palette, history) => {
             }
         })        
     }
+
+        
+    
 
         
     

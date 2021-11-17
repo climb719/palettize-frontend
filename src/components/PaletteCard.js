@@ -5,7 +5,7 @@ import DetailsButton from './DetailsButton'
 
 
  function PaletteCard({id, user, colors}) {
-    console.log(user)
+    //console.log(user)
     //declare a new state variable and set it's initial state of false 
     //this is similar to this.state.isFlipped and this.setState
     //setIsFlipped is what can call to supdate state

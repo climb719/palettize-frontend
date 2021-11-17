@@ -3,7 +3,7 @@ import { postFavroite } from '../redux/actionCreators'
 import { useHistory } from 'react-router-dom'
 
 
-function Favroite ({id, palette, user, postFavroite}) {
+function Favroite ({id, palette, postFavroite}) {
 
  
   const history = useHistory()
