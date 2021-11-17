@@ -1,7 +1,9 @@
 const initialState = {
     palettes: [],
 user: {
-    username: ""
+    id: null,
+    username: "",
+    palettes: []
     },
 selectedPalette: {
     colors: [],
@@ -31,9 +33,9 @@ export function reducer(state=initialState, action) {
         case 'CLEAR_USER':
             console.log(action)
             return {...state, user: null}
-        case 'FAVORITE_PALETTES':
-            console.log(action.payload, "hello favorite palette")
-            return {...state, userFavorites: [...state.userFavorites, action.payload]}
+        // case 'FAVORITE_PALETTES':
+        //     console.log(action.payload, "hello favorite palette")
+        //     return {...state, userFavorites: [...state.userFavorites, action.payload]}
         case 'ADD_PALETTE':
             console.log(action.payload, "new palette!")
             return {...state, palettes: [...state.palettes, action.payload]}

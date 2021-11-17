@@ -7,9 +7,16 @@ export const filterPalettes = (filteredPalettes) => ({type: "SET_FILTERED", payl
 // export const setTags = (uniqueTags) => ({type: "SET_TAGS", payload: uniqueTags})
 
 export const getUserFavorites = (id) => {
-    return dispatch => fetch(API + 'palettes')
+    return dispatch => fetch(API + `users/${id}`, {
+        headers: {
+                'Authorization': localStorage.token
+            }
+        })
     .then(resp => resp.json())
-    .then(palettes => dispatch({type: "AVORITE_PALETTES", payload: palettes}))
+    .then(data => {
+        localStorage.token = data.token
+        dispatch({type: "FAVORIE_PALETTES", payload: data})
+    })
 }
 
 //export const setImage = () => ({type: "SET_IMAGE"})
