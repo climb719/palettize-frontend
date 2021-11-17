@@ -10,14 +10,14 @@ function PaletteShow({user, getPalette, colors, length, tags, palette }) {
    const routeId = useParams().id 
     const userPaletteIds = user.palettes.map(p => p.id)
     //debugger
-    console.log(userPaletteIds)
+  console.log(userPaletteIds)
     console.log(routeId)
     // const inUser = inUser.filer(p => !p.user.palettes.includes(routeId)
    useEffect(() => {
        console.log("getting your palette")
         getPalette(routeId)
     },  [getPalette, routeId] )  
-   //grab id from route id
+  //debugger
     return (
         <div className="App-Main">
             <div className="show">
@@ -28,12 +28,11 @@ function PaletteShow({user, getPalette, colors, length, tags, palette }) {
            <p> <Link className="show-link" to={`/palettes/${parseInt(routeId) + 1}`}>Go to Next Palette</Link> </p>
             }  
             <TagButtons id={routeId} />
-           {(user && userPaletteIds.includes(routeId)) ?
-            <p><Favorite id={routeId} palette={palette}/></p>:
-            ""}
-           {(user && userPaletteIds.includes(routeId)) ? 
-           <p> <button>Delete From My Favorites</button></p> :
-           <Link className="show-link" to={'/palettes'}>Back to All Palettes</Link>}&nbsp;
+           {!userPaletteIds.includes(parseInt(routeId)) && <p><Favorite id={routeId} palette={palette}/></p>}
+
+
+           {userPaletteIds.includes(parseInt(routeId)) && <p> <button>Delete From My Favorites</button></p> }
+           <Link className="show-link" to={'/palettes'}>Back to All Palettes</Link>&nbsp;
         </div>
             )
 }
@@ -41,7 +40,8 @@ function PaletteShow({user, getPalette, colors, length, tags, palette }) {
 const mapStateToProps = (state) => {
     return {...state.selectedPalette,
         palette: state.selectedPalette, 
-    length: state.palettes.length
+        length: state.palettes.length,
+        user: state.user
     }
   }
 

@@ -13,7 +13,6 @@ function PaletteContainer({getPalettes, palettes}) {
 //   }
     // const allTags = paletteTags.flat()
     // const uniqueTags = [...new Set(allTags)].sort()
-    // console.log(uniqueTags)
 
 
     useEffect(getPalettes, [getPalettes])
@@ -35,7 +34,7 @@ function PaletteContainer({getPalettes, palettes}) {
 
 const mapStateToProps = (state) => {
     return {
-        palettes: state.palettes,
+        palettes: state.palettes
         // paletteTags: state.palettes.map(palette => palette.tags)  
     }
 }

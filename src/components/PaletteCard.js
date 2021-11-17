@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip"
+import { connect } from 'react-redux'
 import DetailsButton from './DetailsButton'
 
 
-export default function PaletteCard({id, colors}) {
-    //console.log(id)
+ function PaletteCard({id, user, colors}) {
+    console.log(user)
     //declare a new state variable and set it's initial state of false 
     //this is similar to this.state.isFlipped and this.setState
     //setIsFlipped is what can call to supdate state
@@ -22,9 +23,19 @@ export default function PaletteCard({id, colors}) {
         </div>
         <div className="card" onDoubleClick={handleClick}>
             {colors.map((color, id) => <li key={id}>{color}</li>)}
-            <DetailsButton id={id} />
+           {user && <DetailsButton id={id} /> }
         </div>
         </ReactCardFlip>
     )
 
 }
+
+
+const mapStateToProps = state => {
+  return {
+    user: state.user
+    
+  }
+}
+
+export default connect(mapStateToProps)(PaletteCard)

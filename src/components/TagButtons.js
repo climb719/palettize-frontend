@@ -10,7 +10,7 @@ function TagButtons ({tags, palettes, id, filterPalettes}) {
   
     const allTags = palettes.map(palette => palette.tags).flat()
     const uniqueTags = [...new Set(allTags)].sort()
-    console.log(uniqueTags)
+
 
 
     const scrollToTop = () => {

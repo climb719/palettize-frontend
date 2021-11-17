@@ -10,7 +10,7 @@ selectedPalette: {
     tags: []
     },
 filtered: [],
-userFavorites: []
+
 }
 
 export function reducer(state=initialState, action) {
