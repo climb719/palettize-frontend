@@ -3,6 +3,9 @@ const API = 'http://localhost:3000/'
 
 
 export const filterPalettes = (filteredPalettes) => ({type: "SET_FILTERED", payload: filteredPalettes})
+
+export const sendColor = (tagColor) => ({type: "SET_COLOR", payload: tagColor}, console.log(tagColor))
+
 // export const getUser = (user) => ({type: "SET_USER", payload: user})
 
 // export const getUserFavorites = (id) => {

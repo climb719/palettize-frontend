@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { useLocation,  useHistory  } from 'react-router-dom'
-import { filterPalettes } from '../redux/actionCreators'
+import { filterPalettes, sendColor } from '../redux/actionCreators'
 
 function TagButtons ({tags, palettes, id, filterPalettes}) {
 
@@ -18,9 +18,12 @@ function TagButtons ({tags, palettes, id, filterPalettes}) {
       }
 
     const handleClick= (e) => {
-        console.log(e.target.innerText)
+       let tagColor = e.target.innerText
+       console.log(tagColor)
         const filteredPalettes = palettes.filter(palette => palette.tags.includes(e.target.innerText))
+        sendColor(tagColor)
         filterPalettes(filteredPalettes)
+        
         history.push('/filtered-palettes')
         console.log(filteredPalettes)
         scrollToTop()
@@ -47,7 +50,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    filterPalettes: filteredPalettes => dispatch(filterPalettes(filteredPalettes))
+    filterPalettes: filteredPalettes => dispatch(filterPalettes(filteredPalettes)),
+    sendColor: tagColor => dispatch(sendColor(tagColor))
   })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TagButtons)

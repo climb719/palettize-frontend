@@ -2,15 +2,14 @@ const initialState = {
     palettes: [],
 user: {
     id: null,
-    username: "",
-    
+    username: ""
     },
 selectedPalette: {
     colors: [],
     tags: []
     },
-filtered: []
-// userFavorites: []
+filtered: [],
+tagColor: ""
 }
 
 export function reducer(state=initialState, action) {
@@ -39,6 +38,9 @@ export function reducer(state=initialState, action) {
         case 'ADD_PALETTE':
             console.log(action.payload, "new palette!")
             return {...state, palettes: [...state.palettes, action.payload]}
+        case 'SET_COLOR':
+            console.log(action.payload, "this was the color")
+            return {...state, tagColor: action.payload}
         default:
             return {...state}
     }
