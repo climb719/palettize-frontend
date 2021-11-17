@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { getPalette } from '../redux/actionCreators'
 import { useEffect } from "react"
 import { Link } from 'react-router-dom'
-import  { TagButtons, Favorite } from './index'
+import  { TagButtons, Favorite, DeleteFavorite } from './index'
 
 function PaletteShow({user, getPalette, colors, length, tags, palette }) {
    console.log(user)
@@ -31,7 +31,7 @@ function PaletteShow({user, getPalette, colors, length, tags, palette }) {
            {!userPaletteIds.includes(parseInt(routeId)) && <p><Favorite id={routeId} palette={palette}/></p>}
 
 
-           {userPaletteIds.includes(parseInt(routeId)) && <p> <button>Delete From My Favorites</button></p> }
+           {userPaletteIds.includes(parseInt(routeId)) && <p> <DeleteFavorite id={routeId} /></p> }
            <Link className="show-link" to={'/palettes'}>Back to All Palettes</Link>&nbsp;
         </div>
             )
