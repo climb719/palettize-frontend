@@ -4,25 +4,29 @@ import { useEffect } from "react"
 import { getUserFavorites } from '../redux/actionCreators'
 import { NavLink } from 'react-router-dom'
 
-const Dashboard = ({user, getUserFavorites}) => {
-    console.log(props)
-    console.log(props.user.id)
+const Dashboard = ({user, getUserFavorites, userFavorites}) => {
 
-    console.log(props.userFavorites)
-  // const userPalettes = props.userFavorites.array.map(palette => palette)
+
+    const id = user.id
+    console.log(id)
+    console.log(userFavorites)
+  // const userPalettes = userFavorites.array.map(palette => palette)
   // console.log(userPalettes)
 
-  useEffect(getUserPalettes(id), [getUserPalettes])
+  useEffect((id) => {
+  // debugger
+    getUserFavorites(id) 
+  }, [getUserFavorites])
 
   return (
   
     <div className="App-Main">
   
-      {(props.userFavorites.length === 0)? 
+      {(userFavorites.length === 0)? 
       <div className="no-palettes"><p>Looks Like you haven't saved any palettes yet, get started here: </p><NavLink to="/palettes"> Palette Library</NavLink> </div>:
       <div className="dashboard">
         <h2 className="my_palettes">My Palettes</h2>
-        {/* {props.userFavorites.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )} */}
+        {/* {userFavorites.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )} */}
     
       
         <div className="filtered-container">     
@@ -50,4 +54,4 @@ const mapDispatchToProps = (dispatch) => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
 // {getUserPalettes}
-// {props.userPalettes.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )}
+// {userPalettes.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )}
