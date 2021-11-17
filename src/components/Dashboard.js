@@ -1,19 +1,21 @@
 import { connect } from 'react-redux'
 import { PaletteCard, TagButtons } from '../components/index'
-// import { useEffect } from "react"
-// import { getUserFavorites } from '../redux/actionCreators'
+//import { useEffect } from "react"
+//import { getUser } from '../redux/actionCreators'
 import { NavLink } from 'react-router-dom'
 
-const Dashboard = ({user}) => {
+const Dashboard = ({user, getUser}) => {
 
 
     // const id = user.id
     // console.log(id)
     console.log(user)
+    // console.log(userFavorites)
     const userPalettes = user.palettes
   // const userPalettes = userFavorites.array.map(palette => palette)
   // console.log(userPalettes)
 
+  //useEffect(() => getUser(), [getUser])
   // useEffect((id) => {
   // // debugger
   //   getUserFavorites(id) 
@@ -43,7 +45,7 @@ const Dashboard = ({user}) => {
 
 const mapStateToProps = state => {
   return {
-    userFavorites: state.userFavorites,
+    // userFavorites: state.userFavorites,
     user: state.user
     
   }

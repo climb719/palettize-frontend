@@ -3,20 +3,22 @@ const API = 'http://localhost:3000/'
 
 
 export const filterPalettes = (filteredPalettes) => ({type: "SET_FILTERED", payload: filteredPalettes})
-// export const setTags = (uniqueTags) => ({type: "SET_TAGS", payload: uniqueTags})
+// export const getUser = (user) => ({type: "SET_USER", payload: user})
 
-export const getUserFavorites = (id) => {
-    return dispatch => fetch(API + `users/${id}`, {
-        headers: {
-                'Authorization': localStorage.token
-            }
-        })
-    .then(resp => resp.json())
-    .then(data => {
-        localStorage.token = data.token
-        dispatch({type: "FAVORIE_PALETTES", payload: data})
-    })
-}
+// export const getUserFavorites = (id) => {
+//     return dispatch => fetch(API + `users/${id}`, {
+//         headers: {
+//                 'Authorization': localStorage.token
+//             }
+//         })
+//     .then(resp => resp.json())
+//     .then(data => {
+//         console.log(data)
+//         debugger
+//         localStorage.token = data.token
+//         dispatch({type: "FAVORIE_PALETTES", payload: data})
+//     })
+// }
 
 //export const setImage = () => ({type: "SET_IMAGE"})
 export const clearUser = () => ({type: "CLEAR_USER"})
@@ -100,7 +102,7 @@ export const postFavroite = (palette, id, history) => {
         .then(data => {
       
             console.log(data)
-            dispatch({type: "FAVORITE_PALETTE", payload: data})
+            dispatch({type: "SET_USER", payload: data})
             history.push('/dashboard')  
     })
 }   
