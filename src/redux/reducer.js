@@ -31,7 +31,7 @@ export function reducer(state=initialState, action) {
         case 'CLEAR_USER':
             console.log(action)
             return {...state, user: null}
-        case 'FAVORITE_PALETTE':
+        case 'FAVORITE_PALETTES':
             console.log(action.payload, "hello favorite palette")
             return {...state, userFavorites: [...state.userFavorites, action.payload]}
         case 'ADD_PALETTE':

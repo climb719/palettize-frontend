@@ -5,7 +5,12 @@ const API = 'http://localhost:3000/'
 
 export const filterPalettes = (filteredPalettes) => ({type: "SET_FILTERED", payload: filteredPalettes})
 // export const setTags = (uniqueTags) => ({type: "SET_TAGS", payload: uniqueTags})
-export const getUserFavorites = () =>  ({type: "USER_PALETTES"})
+
+export const getUserFavorites = () => {
+    return dispatch => fetch(API + 'palettes')
+    .then(resp => resp.json())
+    .then(palettes => dispatch({type: "AVORITE_PALETTES", payload: palettes}))
+}
 
 //export const setImage = () => ({type: "SET_IMAGE"})
 export const clearUser = () => ({type: "CLEAR_USER"})
