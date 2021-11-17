@@ -54,6 +54,7 @@ function AddPalette(props) {
             <p>Color 3: <input type="color" id="color3" name="color3" value={colors[2]} onChange={handleColorChange}/></p>
             <p>Color 4: <input type="color" id="color4" name="color4" value={colors[3]} onChange={handleColorChange}/></p> 
             </div> 
+            <br></br>
             <Select
             closeMenuOnSelect={false}
             components={animatedSelect}

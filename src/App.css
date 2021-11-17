@@ -112,6 +112,18 @@ nav:active {
 
 }
 
+.user-container {
+  display: inline-grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 2em;
+  grid-column-gap: 2rem;
+  padding: 2em;
+  padding-left: 12%;
+  padding-bottom: 80%;
+
+}
+
 
 
 .palettes {
@@ -288,11 +300,11 @@ nav:active {
   border: 2px blue solid;
   position: absolute;
   top: 28%;
-  margin-left: 0%;
+  margin-left: -2%;
   padding: 20px;
   background-color: lightgrey;
   width: 22%;
-  height: 40%;
+  height: 45%;
   color: rgb(104, 103, 103);
   font-size: 14px;
   text-align: left;

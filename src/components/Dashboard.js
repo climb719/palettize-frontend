@@ -1,4 +1,4 @@
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 import { PaletteCard, TagButtons } from '../components/index'
 // import { useEffect } from "react"
 // import { getUserFavorites } from '../redux/actionCreators'
@@ -28,7 +28,7 @@ const Dashboard = ({user}) => {
         <div>
           <TagButtons />
         <h2 className="palettes">My Palettes</h2>
-        <div className="palette-container">
+        <div className="user-container">
         {userPalettes.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )}
         </div>
         </div>
