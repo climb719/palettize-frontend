@@ -26,7 +26,7 @@ function App({user, autoLogin, clearUser}) {
       <Switch>
       <Route path="/signup"  render={(routeProps) => <Signup {...routeProps} />}/> 
       <Route path="/login"  render={(routeProps) => <Login {...routeProps} />}/> 
-      <Route path='/dashboard' render={(routeProps) => <Dashboard  {...routeProps} />} />
+      <Route path='/dashboard' render={(routeProps) => <Dashboard user={user} {...routeProps} />} />
       <Route path='/palettes/:id' component={PaletteShow} />
       <Route path='/palettes'component={PaletteContainer} />
       <Route path='/filtered-palettes' component={FilteredPalettes} />

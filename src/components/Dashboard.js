@@ -1,17 +1,18 @@
-import { connect } from 'react-redux'
+//import { connect } from 'react-redux'
 import { PaletteCard, TagButtons } from '../components/index'
 //import { useEffect } from "react"
 //import { getUser } from '../redux/actionCreators'
 import { NavLink } from 'react-router-dom'
 
-const Dashboard = ({user}) => {
+const Dashboard = ({ user}) => {
 
 
     // const id = user.id
     // console.log(id)
-    console.log(user)
+   // console.log(userFavorites)
+   console.log(user)
     // console.log(userFavorites)
-    const userPalettes = user.palettes
+   const userPalettes = user.palettes
   // const userPalettes = userFavorites.array.map(palette => palette)
   // console.log(userPalettes)
 
@@ -43,19 +44,19 @@ const Dashboard = ({user}) => {
 
 }
 
-const mapStateToProps = state => {
-  return {
-    // userFavorites: state.userFavorites,
-    user: state.user
+// const mapStateToProps = state => {
+//   return {
+//     // userFavorites: state.userFavorites,
+//     userFavorites: state.userFavorites
     
-  }
-}
+//   }
+// }
 
 // const mapDispatchToProps = (dispatch) => ({
 //   getUserFavorites: id => dispatch(getUserFavorites(id))
 // })
 
-
-export default connect(mapStateToProps)(Dashboard)
+export default Dashboard
+// export default connect(mapStateToProps)(Dashboard)
 // {getUserPalettes}
 // {userPalettes.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )}
