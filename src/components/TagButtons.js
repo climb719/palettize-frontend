@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { useLocation,  useHistory  } from 'react-router-dom'
 import { filterPalettes, sendColor } from '../redux/actionCreators'
 
-function TagButtons ({tags, palettes, id, filterPalettes}) {
+function TagButtons ({tags, palettes, id, filterPalettes, sendColor}) {
 
     const location = useLocation()
     const history = useHistory();

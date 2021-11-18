@@ -127,6 +127,12 @@ nav:active {
 }
 
 
+.filtered-palettes {
+  text-transform: capitalize;
+  margin-top: 7%;
+  margin-left: 10%; 
+}
+
 .lib-dashboard {
   position: absolute;
   left: 1%;
