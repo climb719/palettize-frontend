@@ -7,24 +7,30 @@ import  { TagButtons, Favorite, DeleteFavorite } from './index'
 
 function PaletteShow({user, getPalette, colors, length, palette }) {
   
-   const routeId = useParams().id 
-
+   const routeId = useParams().id
    
    const userFavorites = user.favorites
+
    const userPalettes = userFavorites.map((favorite => favorite.palette))
    const userPaletteIds = userPalettes.map(p => p.id)
-   const favs = userFavorites.map(f => ({id: f.id, palette: f.palette.id} ))
-   let num = parseInt(routeId)
-   let fav = favs.find( ({palette}) => palette === num )
-   const favoriteId = fav.id
+  //  const favs = userFavorites.map(f => ({id: f.id, palette: f.palette.id} ))
+  //  let num = parseInt(routeId)
+  //  let fav = favs.find( ({palette}) => palette === num )
+  //  const favoriteId = fav.id
+  
+  
 
    useEffect(() => {
        console.log("getting your palette")
         getPalette(routeId)
     },  [getPalette, routeId] )  
 
+    //debugger
+
     return (
+  
         <div className="App-Main">
+             
             <div className="show">
             {colors.map((color, id) => <span key={id} style={{backgroundColor: color} }>{color}</span>)}
             </div>
@@ -33,14 +39,14 @@ function PaletteShow({user, getPalette, colors, length, palette }) {
            <p> <Link className="show-link" to={`/palettes/${parseInt(routeId) + 1}`}>Go to Next Palette</Link> </p>
             }  
             <TagButtons id={routeId} />
-           {!userPaletteIds.includes(parseInt(routeId)) && <p><Favorite id={routeId} palette={palette}/></p>}
-
-
-           {userPaletteIds.includes(parseInt(routeId)) && <p> <DeleteFavorite id={routeId} favoriteId={favoriteId}/></p> }
+           { ( userFavorites && userPaletteIds.includes(parseInt(routeId))) ?
+            <p> <DeleteFavorite id={routeId}/></p> :
+            <p><Favorite id={routeId} palette={palette}/></p> }
            <Link className="show-link" to={'/palettes'}>Back to All Palettes</Link>&nbsp;
         </div>
             )
 }
+
 
 const mapStateToProps = (state) => {
     return {...state.selectedPalette,

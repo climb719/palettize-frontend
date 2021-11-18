@@ -11,3 +11,4 @@ function DeleteFavorite (props) {
   }
   
   export default DeleteFavorite
+  

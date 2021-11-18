@@ -28,8 +28,7 @@ function PaletteContainer({getPalettes, palettes}) {
             {palettes.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )}
         </div>
         </div>
-        )
-    
+    )    
 }
 
 const mapStateToProps = (state) => {
