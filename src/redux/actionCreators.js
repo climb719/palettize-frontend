@@ -8,20 +8,20 @@ export const sendColor = (tagColor) => ({type: "SET_COLOR", payload: tagColor}, 
 
 export const updateUserDetails = (user) => ({type: "SET_USER", payload: user})
 
-export const getUserFavorites = (id) => {
-    return dispatch => fetch(API + `users/${id}`, {
-        headers: {
-                'Authorization': localStorage.token
-            }
-        })
-    .then(resp => resp.json())
-    .then(data => {
-        console.log(data)
-       // debugger
-        // localStorage.token = data.token
-        dispatch({type: "GET_FAVORITES", payload: data})
-    })
-}
+// export const getUserFavorites = (id) => {
+//     return dispatch => fetch(API + `users/${id}`, {
+//         headers: {
+//                 'Authorization': localStorage.token
+//             }
+//         })
+//     .then(resp => resp.json())
+//     .then(data => {
+//         console.log(data)
+//        // debugger
+//         // localStorage.token = data.token
+//         dispatch({type: "GET_FAVORITES", payload: data})
+//     })
+// }
 
 //export const setImage = () => ({type: "SET_IMAGE"})
 export const clearUser = () => ({type: "CLEAR_USER"})
@@ -113,23 +113,23 @@ export const postFavroite = (palette, id, history) => {
 }   
 
 
-// export const deleteFavroite = (palette, id, history) => {
-//     return dispatch => fetch(`http://localhost:3000/palettes/${id}/favorites`, {
-//      method: 'DELETE', 
-//         headers: {
-//             'Authorization': localStorage.token
-//             },
-//             body: JSON.stringify({favorite: palette}),
-//         })
-//         .then(res => res.json())
+export const deletePalette = (paletteId, favoriteId ) => {
+    console.log(paletteId, favoriteId)
+    return dispatch => fetch(`http://localhost:3000/palettes/${paletteId}/favorites/${favoriteId}`, {
+     method: 'DELETE', 
+        headers: {
+            'Authorization': localStorage.token
+            },
+        })
+        .then(res => res.json())
         
-//         .then(data => {
-      
-//             console.log(data)
-//             dispatch({type: "SET_USER", payload: data})
-//             history.push('/dashboard')  
-//     })
-// }   
+        .then(data => {
+            debugger
+            console.log(data)
+            dispatch({type: "SET_USER", payload: data})
+            
+    })
+}   
 
 export const addNewPalette = (palette, history) => {
     return  dispatch => fetch(API + 'palettes', {
