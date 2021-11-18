@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import DetailsButton from './DetailsButton'
 
 
- function PaletteCard({id, user, colors}) {
+ function UserCard({id, user, colors}) {
     //console.log(user)
     //declare a new state variable and set it's initial state of false 
     //this is similar to this.state.isFlipped and this.setState
@@ -38,4 +38,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(PaletteCard)
+export default connect(mapStateToProps)(UserCard)

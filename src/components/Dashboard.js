@@ -1,5 +1,5 @@
 //import { connect } from 'react-redux'
-import { PaletteCard, TagButtons } from '../components/index'
+import { UserCard, TagButtons } from '../components/index'
 //import { useEffect } from "react"
 //import { getUser } from '../redux/actionCreators'
 import { NavLink } from 'react-router-dom'
@@ -32,7 +32,7 @@ const Dashboard = ({user}) => {
           <TagButtons />
         <h2 className="palettes">My Palettes</h2>
         <div className="user-container">
-        {userPalettes.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )}
+        {userPalettes.map(palette => <UserCard key={palette.id} id={palette.id} colors={palette.colors} /> )}
         </div>
         </div>
         }

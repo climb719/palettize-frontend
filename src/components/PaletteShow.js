@@ -6,29 +6,23 @@ import { Link } from 'react-router-dom'
 import  { TagButtons, Favorite, DeleteFavorite } from './index'
 
 function PaletteShow({user, getPalette, colors, length, palette }) {
-   console.log(user)
-   console.log(palette)
-   console.log(colors)
+  
    const routeId = useParams().id 
+
+   
    const userFavorites = user.favorites
- 
    const userPalettes = userFavorites.map((favorite => favorite.palette))
-   console.log(userPalettes)
-    const userPaletteIds = userPalettes.map(p => p.id)
-  const favs = userFavorites.map(f => ({id: f.id, palette: f.palette.id} ))
-    console.log(favs)
-  let num = parseInt(routeId)
-  console.log(userPaletteIds)
-  let fav = favs.find( ({palette}) => palette === num )
- const favoriteId = fav.id
- console.log(favoriteId)
-    console.log(routeId)
+   const userPaletteIds = userPalettes.map(p => p.id)
+   const favs = userFavorites.map(f => ({id: f.id, palette: f.palette.id} ))
+   let num = parseInt(routeId)
+   let fav = favs.find( ({palette}) => palette === num )
+   const favoriteId = fav.id
 
    useEffect(() => {
        console.log("getting your palette")
         getPalette(routeId)
     },  [getPalette, routeId] )  
- // debugger
+
     return (
         <div className="App-Main">
             <div className="show">
