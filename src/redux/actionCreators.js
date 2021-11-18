@@ -4,7 +4,7 @@ const API = 'http://localhost:3000/'
 
 export const filterPalettes = (filteredPalettes) => ({type: "SET_FILTERED", payload: filteredPalettes})
 
-export const sendColor = (tagColor) => ({type: "SET_COLOR", payload: tagColor}, console.log(tagColor))
+export const sendColor = (tagColor) => ({type: "SET_COLOR", payload: tagColor})
 
 export const updateUserDetails = (user) => ({type: "SET_USER", payload: user})
 
@@ -101,35 +101,38 @@ export const postFavroite = (palette, id, history) => {
             body: JSON.stringify({favorite: palette}),
         })
         .then(res => res.json())
-        
         .then(data => {
-      
+            console.log(data)
+           // debugger
+           dispatch({type: "SET_USER", payload: data})
+           
+           history.push('/dashboard')  
+           alert("Your palette has been added to your dashboard!")
+    })
+}   
+
+
+export const deletePalette = (paletteId, favoriteId, history) => {
+   
+    console.log(paletteId, favoriteId)
+   //debugger 
+    return dispatch => fetch(`http://localhost:3000/palettes/${paletteId}/favorites/${favoriteId}`, {
+        method: 'DELETE',
+        headers: {
+            'Authorization': localStorage.token
+            }   
+        })
+        .then(res => res.json())
+        .then(data => {
             console.log(data)
            // debugger
            dispatch({type: "SET_USER", payload: data})
           
-            history.push('/dashboard')  
+           history.push('/dashboard')  
+           alert("Palette has been deleted from your dashboard!")
     })
 }   
 
-
-export const deletePalette = (paletteId, favoriteId ) => {
-    console.log(paletteId, favoriteId)
-    return dispatch => fetch(`http://localhost:3000/palettes/${paletteId}/favorites/${favoriteId}`, {
-     method: 'DELETE', 
-        headers: {
-            'Authorization': localStorage.token
-            },
-        })
-        .then(res => res.json())
-        
-        .then(data => {
-            debugger
-            console.log(data)
-            dispatch({type: "SET_USER", payload: data})
-            
-    })
-}   
 
 export const addNewPalette = (palette, history) => {
     return  dispatch => fetch(API + 'palettes', {
@@ -148,9 +151,9 @@ export const addNewPalette = (palette, history) => {
             } else {
                 console.log(data)
                 dispatch({type: "ADD_PALETTE", payload: palette})
-                 console.log(palette)
-                alert("Your palette has been added!")
+                console.log(palette)
                 history.history.push('/palettes') 
+                alert("Your palette has been added!")
 
             }
         })        
