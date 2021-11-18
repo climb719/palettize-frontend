@@ -13,10 +13,7 @@ function PaletteShow({user, getPalette, colors, length, palette }) {
 
    const userPalettes = userFavorites.map((favorite => favorite.palette))
    const userPaletteIds = userPalettes.map(p => p.id)
-  //  const favs = userFavorites.map(f => ({id: f.id, palette: f.palette.id} ))
-  //  let num = parseInt(routeId)
-  //  let fav = favs.find( ({palette}) => palette === num )
-  //  const favoriteId = fav.id
+
   
   
 
@@ -40,7 +37,7 @@ function PaletteShow({user, getPalette, colors, length, palette }) {
             }  
             <TagButtons id={routeId} />
            { ( userFavorites && userPaletteIds.includes(parseInt(routeId))) ?
-            <p> <DeleteFavorite id={routeId}/></p> :
+            <p> <DeleteFavorite user={user}  id={routeId}/></p> :
             <p><Favorite id={routeId} palette={palette}/></p> }
            <Link className="show-link" to={'/palettes'}>Back to All Palettes</Link>&nbsp;
         </div>
