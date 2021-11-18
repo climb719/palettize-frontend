@@ -5,19 +5,30 @@ import { useEffect } from "react"
 import { Link } from 'react-router-dom'
 import  { TagButtons, Favorite, DeleteFavorite } from './index'
 
-function PaletteShow({user, getPalette, colors, length, tags, palette }) {
+function PaletteShow({user, getPalette, colors, length, palette }) {
    console.log(user)
+   console.log(palette)
+   console.log(colors)
    const routeId = useParams().id 
-    const userPaletteIds = user.palettes.map(p => p.id)
-    //debugger
+   const userFavorites = user.favorites
+ 
+   const userPalettes = userFavorites.map((favorite => favorite.palette))
+   console.log(userPalettes)
+    const userPaletteIds = userPalettes.map(p => p.id)
+  const favs = userFavorites.map(f => ({id: f.id, palette: f.palette.id} ))
+    console.log(favs)
+  let num = parseInt(routeId)
   console.log(userPaletteIds)
+  let fav = favs.find( ({palette}) => palette === num )
+ const favoriteId = fav.id
+ console.log(favoriteId)
     console.log(routeId)
-    // const inUser = inUser.filer(p => !p.user.palettes.includes(routeId)
+
    useEffect(() => {
        console.log("getting your palette")
         getPalette(routeId)
     },  [getPalette, routeId] )  
-  //debugger
+ // debugger
     return (
         <div className="App-Main">
             <div className="show">
@@ -31,7 +42,7 @@ function PaletteShow({user, getPalette, colors, length, tags, palette }) {
            {!userPaletteIds.includes(parseInt(routeId)) && <p><Favorite id={routeId} palette={palette}/></p>}
 
 
-           {userPaletteIds.includes(parseInt(routeId)) && <p> <DeleteFavorite id={routeId} /></p> }
+           {userPaletteIds.includes(parseInt(routeId)) && <p> <DeleteFavorite id={routeId} favoriteId={favoriteId}/></p> }
            <Link className="show-link" to={'/palettes'}>Back to All Palettes</Link>&nbsp;
         </div>
             )

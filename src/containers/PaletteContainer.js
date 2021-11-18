@@ -18,8 +18,8 @@ function PaletteContainer({getPalettes, palettes}) {
     useEffect(getPalettes, [getPalettes])
     //useEffect instead of component did mount
     //function and array of dependenies, so if chnages it can run again but since doesn't change, happences once 
-
-        
+    
+      console.log(palettes)  
     return (
         <div className="App-Main">
         <TagButtons />

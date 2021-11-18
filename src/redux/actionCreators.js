@@ -6,7 +6,7 @@ export const filterPalettes = (filteredPalettes) => ({type: "SET_FILTERED", payl
 
 export const sendColor = (tagColor) => ({type: "SET_COLOR", payload: tagColor}, console.log(tagColor))
 
-// export const getUser = (user) => ({type: "SET_USER", payload: user})
+export const updateUserDetails = (user) => ({type: "SET_USER", payload: user})
 
 export const getUserFavorites = (id) => {
     return dispatch => fetch(API + `users/${id}`, {
@@ -106,7 +106,8 @@ export const postFavroite = (palette, id, history) => {
       
             console.log(data)
            // debugger
-            dispatch({type: "ADD_FAVORITE", payload: data})
+           dispatch({type: "SET_USER", payload: data})
+          
             history.push('/dashboard')  
     })
 }   
