@@ -1,3 +1,19 @@
+# Palettize 
+
+Palettize is a SPA dev tool that compiles a design library of color palettes allowing users to filter, save to a dashboard, and create palettes from a form or an image.
+    - Built with React-Redux frontend, an integrated Rails API backend, and features react packages,   and authentication.
+    - Applied asynchronous functions and redux-thunk middleware to send data to and receive data from a server
+    - Utilized Redux middleware to respond to and modify state change along with react-router for RESTful routing
+
+This is the front end of the Palettize App. Fork and clone this repo and run npm install and npm start or yarn install and yarn start. If you have the backend up and running, Palettize will open in your browser and you can get to work making your apps and websites more colorful. 
+
+Get started by visiting the backend API: https://github.com/climb719/palettize-backend
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
