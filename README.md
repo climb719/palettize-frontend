@@ -1,6 +1,6 @@
 # Palettize 
 
-Palettize is a SPA dev tool that compiles a design library of color palettes allowing users to filter, save to a dashboard, and create palettes from a form or an image.
+Palettize is a SPA dev tool that compiles a design library of color palettes allowing users to browse, filter, save to a dashboard, and create palettes from a form or an image.
     - Built with React-Redux frontend, an integrated Rails API backend, and features react packages,   and authentication.
     - Applied asynchronous functions and redux-thunk middleware to send data to and receive data from a server
     - Utilized Redux middleware to respond to and modify state change along with react-router for RESTful routing
