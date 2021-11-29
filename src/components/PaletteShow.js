@@ -39,7 +39,10 @@ function PaletteShow({user, getPalette, colors, length, palette }) {
            { ( userFavorites && userPaletteIds.includes(parseInt(routeId))) ?
             <p> <DeleteFavorite user={user}  id={routeId}/></p> :
             <p><Favorite id={routeId} palette={palette}/></p> }
-           <Link className="show-link" to={'/palettes'}>Back to All Palettes</Link>&nbsp;
+            { (parseInt(routeId)  === parseInt(length)) ?
+            "":
+           <Link className="show-link" to={'/palettes'}>Back to All Palettes</Link>
+            }
         </div>
             )
 }

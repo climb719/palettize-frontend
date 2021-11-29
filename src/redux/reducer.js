@@ -19,7 +19,7 @@ export function reducer(state=initialState, action) {
             console.log("before test case return")
             return {...state, test: "Hello World!"}
         case 'FETCH_PALETTES':
-            console.log(action)
+            console.log("E")
             return {...state, palettes: action.payload}
         case 'FETCH_PALETTE':
             console.log("getting one palette", action.payload)

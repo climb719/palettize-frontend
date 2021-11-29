@@ -15,11 +15,11 @@ function PaletteContainer({getPalettes, palettes}) {
     // const uniqueTags = [...new Set(allTags)].sort()
 
 
-    useEffect(getPalettes, [getPalettes])
+    useEffect(getPalettes, [getPalettes], console.log("A"))
     //useEffect instead of component did mount
-    //function and array of dependenies, so if chnages it can run again but since doesn't change, happences once 
-    
-      console.log(palettes)  
+    //function and array of dependenies, so if changes it can run again but since doesn't change, happences once 
+    console.log("B")  
+
     return (
         <div className="App-Main">
         <TagButtons />

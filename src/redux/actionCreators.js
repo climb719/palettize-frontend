@@ -27,10 +27,12 @@ export const updateUserDetails = (user) => ({type: "SET_USER", payload: user})
 export const clearUser = () => ({type: "CLEAR_USER"})
 
 export const getPalettes = () => {
+    console.log("C")
     return dispatch => fetch(API + 'palettes')
     .then(resp => resp.json())
-    .then(palettes => dispatch({type: 'FETCH_PALETTES', payload: palettes}))
+    .then(palettes => dispatch({type: 'FETCH_PALETTES', payload: palettes}, console.log("D")))
 }
+
 
 
 export const getPalette = (id) => {
