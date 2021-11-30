@@ -18,14 +18,11 @@ function TagButtons ({tags, palettes, id, filterPalettes, sendColor}) {
       }
 
     const handleClick= (e) => {
-       let tagColor = e.target.innerText
-       console.log(tagColor)
+        let tagColor = e.target.innerText
         const filteredPalettes = palettes.filter(palette => palette.tags.includes(e.target.innerText))
         sendColor(tagColor)
         filterPalettes(filteredPalettes)
-        
         history.push('/filtered-palettes')
-        console.log(filteredPalettes)
         scrollToTop()
     }
 

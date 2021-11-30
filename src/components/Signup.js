@@ -4,15 +4,14 @@ import { useState } from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
 
 function Signup (props) {
-  console.log(props)
+
   const [user, setUser] = useState({username: "", password: "", passwordConfirmation: ""})
   const history = useHistory()
   
   const handleChange = (e) => setUser({...user, [e.target.name]: e.target.value})
-  //need to keep all key/value pairs and then update whatever key we are pasing in with this value - if using an object
+ 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(user)
     props.addUser(user, history)
   }
   
@@ -42,7 +41,6 @@ function Signup (props) {
   
     )
 }
-
 
 const mapDispatchToProps = (dispatch, history) => ({
   addUser: user => dispatch(addUser(user, history))
