@@ -15,8 +15,8 @@ function AddPalette(props) {
     const [optionSelected, setSelected] = useState("")
     const [palette, setPalette] = useState({colors: [], tags: []})
   
-    const handleColorChange = (e) => setColors({...colors, [e.target.name]: e.target.value}, console.log(colors))
-    const handleSelectChange = (selected) => setSelected({optionSelected: selected}, console.log(optionSelected))
+    const handleColorChange = (e) => setColors({...colors, [e.target.name]: e.target.value})
+    const handleSelectChange = (selected) => setSelected({optionSelected: selected})
     
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -37,7 +37,7 @@ function AddPalette(props) {
     return (
         <div className="App-Main">
         <h2 className="add-title">Palettize</h2>
-          <p className="add-text">Add A Palette Here</p>
+          <p className="add-text">Add a palette to the general library here: </p>
             <div className="add-form">
             <form onSubmit={handleSubmit}> 
             <p>Choose your palettes's colors:</p>
