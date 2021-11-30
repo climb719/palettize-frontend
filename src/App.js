@@ -5,20 +5,14 @@ import { connect } from 'react-redux'
 import { useEffect } from 'react'
 import { autoLogin, clearUser } from './redux/actionCreators'
 
-
-
 function App({user, autoLogin, clearUser}) {
 
-  console.log(localStorage.token)
-
- useEffect(() => localStorage.token && autoLogin(), [autoLogin])
+  useEffect(() => localStorage.token && autoLogin(), [autoLogin])
  
-
- const logout = () => {
-   console.log("logout")
-   localStorage.removeItem("token")
-   clearUser()
- }
+  const logout = () => {
+    localStorage.removeItem("token")
+    clearUser()
+  }
 
   return (
     <div className="App">
