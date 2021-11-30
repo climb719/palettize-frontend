@@ -4,15 +4,13 @@ import { useState } from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
 
 function Login (props) {
-  console.log(props)
   const [user, setUser] = useState({username: "", password: ""})
   const history = useHistory()
   
-  const handleChange = (e) => setUser({...user, [e.target.name]: e.target.value}, console.log(user))
-  //need to keep all key/value pairs and then update whatever key we are pasing in with this value - if using an object
+  const handleChange = (e) => setUser({...user, [e.target.name]: e.target.value})
+ 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(user)
     props.findUser(user, history)
   }
   
@@ -30,16 +28,13 @@ function Login (props) {
             Password<br/>
             </label>
             <input type="password" name="password" value={user.password} onChange={handleChange} size="40"/></p>
-        
             <p><input type="submit" value="Submit" /></p>
           </form><br/>
           New to Palettize? <NavLink to="/signup"> Signup</NavLink>
         </div>
     </div>
-  
     )
 }
-
 
 const mapDispatchToProps = (dispatch, history) => ({
   findUser: user => dispatch(findUser(user, history))
