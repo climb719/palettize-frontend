@@ -18,7 +18,6 @@ class Create extends React.Component {
        this.setState({image: "", colors: []}) 
     }
 
- 
     getColors = colors =>
     this.setState(state => ({ colors: [...state.colors, ...colors] }))
        
@@ -33,7 +32,6 @@ class Create extends React.Component {
                 )                 
             })
         }
- 
 
     render() {
     return (
@@ -60,7 +58,6 @@ class Create extends React.Component {
 }
 
 export default Create 
-// <p> <button id="save-create" >Save this Palette</button></p>
-// hidden={this.state.colors.length<1}
+
 
 
