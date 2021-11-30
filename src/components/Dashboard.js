@@ -12,7 +12,7 @@ const Dashboard = ({user}) => {
       <div className="no-palettes"><p>Looks Like you haven't saved any palettes yet, get started here: </p><NavLink to="/palettes"> Palette Library</NavLink> </div>:
         <div>
           <TagButtons />
-        <h2 className="palettes">My Palettes</h2>
+        <h2 className="my-palettes"> {user.username}'s Palettes</h2>
         <div className="user-container">
         {userPalettes.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )}
         </div>

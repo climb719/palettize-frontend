@@ -23,7 +23,7 @@ function AddPalette(props) {
         let paletteArr = Object.values(colors)
         let nestedTags = optionSelected.optionSelected
         let tagArr = nestedTags.map(tag => tag.value)
-        if (paletteArr.length !== 4) {
+        if (paletteArr.length !== 4 || nestedTags === null) {
             alert("You have not selected 4 colors, make sure you have made your own selection for colors 1-4")
         } else {
         setPalette({

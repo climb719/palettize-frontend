@@ -115,7 +115,7 @@ nav:active {
   grid-row-gap: 2em;
   grid-column-gap: 2rem;
   padding: 2em;
-  padding-left: 12%;
+  padding-left: 8%;
   padding-bottom: 80%;
 }
 
@@ -124,6 +124,11 @@ nav:active {
 .palettes {
   margin-top: 7%;
   margin-left: 10%; 
+}
+
+.my-palettes {
+  margin-top: 9%;
+  margin-left: 12%; 
 }
 
 
