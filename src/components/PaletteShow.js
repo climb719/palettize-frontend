@@ -8,26 +8,17 @@ import  { TagButtons, Favorite, DeleteFavorite } from './index'
 function PaletteShow({user, getPalette, colors, length, palette }) {
   
    const routeId = useParams().id
-   
    const userFavorites = user.favorites
-
    const userPalettes = userFavorites.map((favorite => favorite.palette))
    const userPaletteIds = userPalettes.map(p => p.id)
 
-  
-  
-
    useEffect(() => {
-       console.log("getting your palette")
         getPalette(routeId)
     },  [getPalette, routeId] )  
 
-    //debugger
 
     return (
-  
         <div className="App-Main">
-             
             <div className="show">
             {colors.map((color, id) => <span key={id} style={{backgroundColor: color} }>{color}</span>)}
             </div>
@@ -46,7 +37,6 @@ function PaletteShow({user, getPalette, colors, length, palette }) {
         </div>
             )
 }
-
 
 const mapStateToProps = (state) => {
     return {...state.selectedPalette,

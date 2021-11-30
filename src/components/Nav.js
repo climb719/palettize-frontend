@@ -1,18 +1,9 @@
-
 import { NavLink } from 'react-router-dom'
-
 
 function Nav(props){
 
-  console.log(props.user)
-
- 
-
   const handleLogout = () => {
-      
-      props.logout()
-      
-   
+      props.logout() 
   }
 
   return <nav>
