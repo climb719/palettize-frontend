@@ -6,18 +6,9 @@ import { useEffect } from "react"
 import  { TagButtons } from '../components'
 
 function PaletteContainer({getPalettes, palettes}) {
-    //destructuring - instead of props and then using props.palettes 
-
-//   componentDidMount(){
-//     this.props.getPalettes()
-//   }
-    // const allTags = paletteTags.flat()
-    // const uniqueTags = [...new Set(allTags)].sort()
-
 
     useEffect(getPalettes, [getPalettes], console.log("A"))
-    //useEffect instead of component did mount
-    //function and array of dependenies, so if changes it can run again but since doesn't change, happences once 
+
     console.log("B")  
 
     return (
@@ -34,10 +25,7 @@ function PaletteContainer({getPalettes, palettes}) {
 const mapStateToProps = (state) => {
     return {
         palettes: state.palettes
-        // paletteTags: state.palettes.map(palette => palette.tags)  
     }
 }
 
 export default connect(mapStateToProps, {getPalettes})(PaletteContainer)
-
-// {palettes.map((palette) => ( <div key={palette.id}> {palette.tags.map((tag, i) => <div className="lib-tags" key={i}> {tag} </div> )}  </div> ))}
