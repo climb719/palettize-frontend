@@ -15,7 +15,7 @@ function PaletteContainer({getPalettes, palettes, user}) {
         <div className="App-Main">
         <TagButtons />
         <h2 className="palettes"> Palette Library </h2>
-        {!user && <div className="lib-text">Login or signup to enjoy more features!</div>}
+        {!user && <div className="lib-text">Click to flip cards, double click to flip back. <br></br> Login or signup to enjoy more features!</div>}
         <div className="palette-container">
             {palettes.map(palette => <PaletteCard key={palette.id} id={palette.id} colors={palette.colors} /> )}
         </div>
