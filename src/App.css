@@ -152,6 +152,10 @@ nav:active {
   background-color: gray;
 }
 
+.lib-text {
+  margin-left: 11%;
+}
+
 .card {
   text-align: center;
   border: white solid 2px;
