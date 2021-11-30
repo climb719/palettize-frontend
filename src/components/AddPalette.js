@@ -7,7 +7,7 @@ import { addNewPalette } from '../redux/actionCreators'
 import { useHistory } from 'react-router-dom'
 
 function AddPalette(props) {
-    //console.log(props)
+ 
     const history = useHistory()
     const animatedSelect = makeAnimated()
 
@@ -20,23 +20,16 @@ function AddPalette(props) {
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(colors)
-        console.log(optionSelected)
         let paletteArr = Object.values(colors)
         let nestedTags = optionSelected.optionSelected
         let tagArr = nestedTags.map(tag => tag.value)
         if (paletteArr.length !== 4) {
             alert("You have not selected 4 colors, make sure you have made your own selection for colors 1-4")
         } else {
-        console.log(paletteArr)
-        console.log(tagArr)
-        
         setPalette({
             colors: palette.colors.push(...paletteArr),
             tags: palette.tags.push(...tagArr)
         })
-        console.log(palette)
-        // debugger
         props.addNewPalette(palette, history)
         }
     }
@@ -68,10 +61,7 @@ function AddPalette(props) {
             </div>
         </div>
         )
-    
-
 }
-
 
 const mapDispatchToProps = (dispatch, history) => ({
     addNewPalette: palette => dispatch(addNewPalette(palette, history))
